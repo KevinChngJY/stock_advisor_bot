@@ -1,1 +1,6 @@
-# stock_advisor_bot
+# Stock Advisor Bot
+(Still in development)
+
+
+
+
