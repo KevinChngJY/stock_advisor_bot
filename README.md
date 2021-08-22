@@ -42,4 +42,5 @@
 
 Rasa is an open source machine learning framework for automated text and voice-based conversations. Understand messages, hold conversations, and connect to messaging channels and APIs.
 
-![RASA](Image/rasa.jpeg)
+<img src="https://github.com/KevinChngJY/stock_advisor_bot/blob/main/Image/rasa.jpeg"
+     style="float: left; margin-right: 0px; width: 200px" />
