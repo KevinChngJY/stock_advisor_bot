@@ -24,7 +24,8 @@
 | :------------ | :-----------------------|:----------------|
 | 1.0 RASA |  |  |
 | 1.1 RASA in local host|  |  |
-| 1.1 RASA + Ngrok + Webhook connect to telegram Chatbot |  |  |
+| 1.2 RASA + Ngrok + Webhook connect to telegram Chatbot |  |  |
+| 1.3 RASA X |  |  |
 | 2.0 Content/Response for Chatbot (IPA) |  |  |
 | 2.1 Stock Price |  |  |
 | 2.2 Sentiment Analysis |  |  |
