@@ -29,6 +29,8 @@
 | 2.1 Stock Price |  |  |
 | 2.2 Sentiment Analysis |  |  |
 | 3.0 Integration |  |  |
+| 3.1 Database (Django) |  |  |
+| 3.2 RASA + Django + Celery + Datbase | | |
 | 4.0 Deployment |  |  |
 | 4.1 Deploy in Local Host |  |  |
 | 4.2 Deploy to Server (Digital Ocean) |  |  |
