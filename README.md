@@ -8,6 +8,9 @@
 
 ## SECTION 2 : SYSTEM ARCHITECTURE 
 ## DEPLOY IN LOCAL HOST
+
+<img src="https://github.com/KevinChngJY/stock_advisor_bot/blob/main/Image/architecture1.png" width="455" height="250"
+     style="float: left; margin-right: 0px;" />
      
 ## DEPLOY TO SERVER (DIGITAL OCEAN)
 
