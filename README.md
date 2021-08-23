@@ -53,7 +53,9 @@ Rasa is an open source machine learning framework for automated text and voice-b
 
 <img src="https://github.com/KevinChngJY/stock_advisor_bot/blob/main/Image/rasa.jpeg" width="455" height="250"
      style="float: left; margin-right: 0px;" />
-     
+
+### Milestone 1.1 Deploy Rasa in Local Host
+
 Document below guide you how to start off RASA : 
 
 (The chatbot is our draft in milestone II, not the final product)
