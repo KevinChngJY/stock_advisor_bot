@@ -4,6 +4,8 @@
 ## SECTION 1 : PROJECT TITLE
 ## Stock Advisor Bot
 
+(Still in development)
+
 ---
 
 ## SECTION 2 : SYSTEM ARCHITECTURE 
