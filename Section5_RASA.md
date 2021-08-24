@@ -9,10 +9,8 @@ https://docs.anaconda.com/anaconda/install/index.html
 
 2) Instal the following packages in your conda environment:
 ```
-
 pip install rasa[full]
 pip install yahoofinancials
-
 ```
 
 Documentation for RASA : https://rasa.com/ <br>
