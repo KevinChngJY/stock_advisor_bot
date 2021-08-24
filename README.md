@@ -69,6 +69,8 @@ Besides RASA, you may consider the following AI chatbot frameworks:
 | [9.0 Botkit](https://botkit.ai/) | NodeJS | No |
 | [10.0 ChatterBot](https://chatterbot.readthedocs.io/en/stable/) | NodeJS,Python | Yes |
 
+for detail, you may refer to https://www.spaceo.ca/top-ai-chatbot-frameworks/#link1-3
+
 ### Milestone 1.1 Deploy Rasa in Local Host
 
 Document below guide you how to start off RASA : <br>
