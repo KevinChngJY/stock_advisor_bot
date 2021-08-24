@@ -74,7 +74,8 @@ for detail, you may refer to https://www.spaceo.ca/top-ai-chatbot-frameworks/#li
 ### Milestone 1.1 Deploy Rasa in Local Host
 
 Document below guide you how to start off RASA : <br>
-https://github.com/KevinChngJY/stock_advisor_bot/blob/main/Section5_RASA.md <br>
-(The chatbot is our draft in milestone 1, not the final product)
+https://github.com/KevinChngJY/stock_advisor_bot/blob/main/Section5_RASA.md
+
+### Milestone 1.2 RASA + Ngrok + Webhook connect to telegram Chatbot 
 
 
