@@ -53,6 +53,21 @@ Rasa is an open source machine learning framework for automated text and voice-b
 
 <img src="https://github.com/KevinChngJY/stock_advisor_bot/blob/main/Image/rasa.jpeg" width="455" height="250"
      style="float: left; margin-right: 0px;" />
+     
+Besides RASA, you may consider the following AI chatbot frameworks:
+
+| AI Chatbot |  Programming Languague | NLP Support |
+| :------------ | :-----------------------|:----------------|
+| ![1.0 Microsoft Bot Framework](https://dev.botframework.com/) | NodeJS,C# | No |
+| 2.0 RASA | Python |  Yes |
+| 3.0 Wit AI | Python,Ruby | Yes |
+| 4.0 Dialogflow | NodeJS | Yes |
+| 5.0 IBM Watson| Java,C++ | Yes |
+| 6.0 Amazon Lex | Java,.Net,Ruby | Yes |
+| 7.0 Pandorabots | Java,Ruby,Go,PHP,Python,NodeJS | Yes |
+| 8.0 Botpress | Javascript | Yes |
+| 9.0 Botkit | NodeJS | No |
+| 10.0 ChatterBot | NodeJS,Python | Yes |
 
 ### Milestone 1.1 Deploy Rasa in Local Host
 
