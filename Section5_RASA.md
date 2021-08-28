@@ -42,7 +42,7 @@ rasa run actions
 
 Run Rasa Shell
 ```
-rasa run -v
+rasa shell -v
 ```
 
 Now you can type the following conversation in the rasa shell to test it out:
