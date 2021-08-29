@@ -31,7 +31,7 @@ The article will lead you to get the token for your telegram chatbot, then we wi
 Link: <br>
 https://sendpulse.com/knowledge-base/chatbot/create-telegram-chatbot
 
-<img src="https://github.com/KevinChngJY/stock_advisor_bot/blob/main/Image/scr8-min.png" width="555" height="410"
+<img src="https://github.com/KevinChngJY/stock_advisor_bot/blob/main/Image/scr8-min.png" width="555" height="510"
      style="float: left; margin-right: 0px;" />
 
 ---
@@ -64,7 +64,7 @@ Then you would see the outcome as follows:
 
 Copy the https ngrok link in the diagram above and paste into the credential file:
 
-<img src="https://github.com/KevinChngJY/stock_advisor_bot/blob/main/Image/credential2.png" width="635" height="410"
+<img src="https://github.com/KevinChngJY/stock_advisor_bot/blob/main/Image/credential2.png" width="635" height="510"
      style="float: left; margin-right: 0px;" />
 
 
