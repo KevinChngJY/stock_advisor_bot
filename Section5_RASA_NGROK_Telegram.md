@@ -34,5 +34,17 @@ https://sendpulse.com/knowledge-base/chatbot/create-telegram-chatbot
 <img src="https://github.com/KevinChngJY/stock_advisor_bot/blob/main/Image/scr8-min.png" width="555" height="410"
      style="float: left; margin-right: 0px;" />
 
+---
+
+## SECTION 4 : Configure Rasa Credential File
+
+In the root folder of RASA, open credentials.yml. <br>
+Add the following telegram line : <br>
+
+At this moment, we don't have the ngrok link as we have not yet run ngrok. 
+
+<img src="https://github.com/KevinChngJY/stock_advisor_bot/blob/main/Image/credentiasyml.png" width="555" height="310"
+     style="float: left; margin-right: 0px;" />
+
 
 
