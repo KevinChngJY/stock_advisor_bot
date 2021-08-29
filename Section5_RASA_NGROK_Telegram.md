@@ -43,8 +43,30 @@ Add the following telegram line : <br>
 
 At this moment, we don't have the ngrok link as we have not yet run ngrok. 
 
-<img src="https://github.com/KevinChngJY/stock_advisor_bot/blob/main/Image/credentiasyml.png" width="555" height="310"
+<img src="https://github.com/KevinChngJY/stock_advisor_bot/blob/main/Image/credentiasyml.png" width="635" height="310"
      style="float: left; margin-right: 0px;" />
+
+(Put your own token to the link in the diagram above)
+
+---
+
+## SECTION 5 : Run ngrok and configure RASA Credential File
+
+Open terminal, run
+```
+ngrok http 5005
+```
+
+Then you would see the outcome as follows:
+
+<img src="https://github.com/KevinChngJY/stock_advisor_bot/blob/main/Image/runngrok.png" width="635" height="210"
+     style="float: left; margin-right: 0px;" />
+
+Copy the https ngrok link in the diagram above and paste into the credential file:
+
+<img src="https://github.com/KevinChngJY/stock_advisor_bot/blob/main/Image/credential2.png" width="635" height="310"
+     style="float: left; margin-right: 0px;" />
+
 
 
 
