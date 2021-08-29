@@ -43,7 +43,7 @@ Add the following telegram line : <br>
 
 At this moment, we don't have the ngrok link as we have not yet run ngrok. 
 
-<img src="https://github.com/KevinChngJY/stock_advisor_bot/blob/main/Image/credentiasyml.png" width="635" height="410"
+<img src="https://github.com/KevinChngJY/stock_advisor_bot/blob/main/Image/credentiasyml.png" width="635" height="510"
      style="float: left; margin-right: 0px;" />
 ```
 telegram:
@@ -103,5 +103,6 @@ Verify the webhook connection, paste the following in the browser:
 https://api.telegram.org/bot<bot_token>/getWebhookInfo
 
 Chat to your chatbot in the telegram, search your chatbotname and say hi:
-<img src="https://github.com/KevinChngJY/stock_advisor_bot/blob/main/Image/chatbot1.png" width="335" height="510"
+
+<img src="https://github.com/KevinChngJY/stock_advisor_bot/blob/main/Image/chatbot1.png" width="535" height="510"
      style="float: left; margin-right: 0px;" />
