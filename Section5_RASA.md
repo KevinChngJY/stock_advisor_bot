@@ -47,5 +47,5 @@ rasa shell -v
 
 Now you can type the following conversation in the rasa shell to test it out:
 
-<img src="https://github.com/KevinChngJY/stock_advisor_bot/blob/main/Image/Chat1.png" width="400" height="400"
+<img src="https://github.com/KevinChngJY/stock_advisor_bot/blob/main/Image/Chat1.png" width="500" height="400"
      style="float: left; margin-right: 0px;" />
