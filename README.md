@@ -77,6 +77,8 @@ Document below guide you how to start off RASA : <br>
 https://github.com/KevinChngJY/stock_advisor_bot/blob/main/Section5_RASA.md
 
 ### Milestone 1.2 RASA + Ngrok + Webhook connect to telegram Chatbot 
+
+Document below guide you how to integrate RASA +  Ngrok + Telegram Chatbot
 https://github.com/KevinChngJY/stock_advisor_bot/blob/main/Section5_RASA_NGROK_Telegram.md
 
 ### Milestone 1.3 RASA X [Optional]
