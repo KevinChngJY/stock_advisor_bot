@@ -46,7 +46,9 @@ At this moment, we don't have the ngrok link as we have not yet run ngrok.
 <img src="https://github.com/KevinChngJY/stock_advisor_bot/blob/main/Image/credentiasyml.png" width="635" height="410"
      style="float: left; margin-right: 0px;" />
 
-(Put your own token to the link in the diagram above)
+(Put your own token to the link in the above diagram)
+
+Besides, you have to change the chatbot name for the verify in the above diagram.
 
 ---
 
@@ -67,6 +69,7 @@ Copy the https ngrok link in the diagram above and paste into the credential fil
 <img src="https://github.com/KevinChngJY/stock_advisor_bot/blob/main/Image/credential2.png" width="635" height="510"
      style="float: left; margin-right: 0px;" />
 
+Take note that you have to put /webhooks/telegram/webhook behind the ngrok link. 
 
 
 
