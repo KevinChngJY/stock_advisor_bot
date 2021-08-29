@@ -45,6 +45,12 @@ At this moment, we don't have the ngrok link as we have not yet run ngrok.
 
 <img src="https://github.com/KevinChngJY/stock_advisor_bot/blob/main/Image/credentiasyml.png" width="635" height="410"
      style="float: left; margin-right: 0px;" />
+```
+telegram:
+  access_token: "1913586416:AAGMxeeewweewSxcu-FwrermFp6ZGRHHjBIvK8f8O8YWjs" #token
+  verify: "ISA_finance_bot" #Chatbot name
+  webhook_url: "https://e4f2-121-6-113-38.ngrok.io/webhooks/telegram/webhook" #ngrok link
+```
 
 (Put your own token to the link in the above diagram)
 
