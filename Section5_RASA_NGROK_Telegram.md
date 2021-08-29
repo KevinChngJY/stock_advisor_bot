@@ -7,7 +7,7 @@ In this milestone, we are looking to set up telegram chatbot using BotFather, yo
 
 ## SECTION 1 : Architecture 
 
-<img src="https://github.com/KevinChngJY/stock_advisor_bot/blob/main/Image/Screenshot%202021-08-29%20at%204.32.06%20PM.png" width="855" height="250"
+<img src="https://github.com/KevinChngJY/stock_advisor_bot/blob/main/Image/Screenshot%202021-08-29%20at%204.32.06%20PM.png" width="855" height="210"
      style="float: left; margin-right: 0px;" />
 
 ---
