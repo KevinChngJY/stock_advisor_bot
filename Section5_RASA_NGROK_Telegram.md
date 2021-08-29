@@ -28,6 +28,9 @@ Install ngrok from : https://ngrok.com/download
 Article from Sendpulse illustrate very good flow to set up telegram chatbot using Bot Father (Do not need connect to Sendpulse)
 The article will lead you to get the token for your telegram chatbot, then we will use this token for webhook in RASA.
 
+Link: <br>
+https://sendpulse.com/knowledge-base/chatbot/create-telegram-chatbot
+
 <img src="https://github.com/KevinChngJY/stock_advisor_bot/blob/main/Image/scr8-min.png" width="555" height="410"
      style="float: left; margin-right: 0px;" />
 
