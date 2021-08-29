@@ -31,7 +31,7 @@ The article will lead you to get the token for your telegram chatbot, then we wi
 Link: <br>
 https://sendpulse.com/knowledge-base/chatbot/create-telegram-chatbot
 
-<img src="https://github.com/KevinChngJY/stock_advisor_bot/blob/main/Image/scr8-min.png" width="555" height="610"
+<img src="https://github.com/KevinChngJY/stock_advisor_bot/blob/main/Image/scr8-min.png" width="555" height="410"
      style="float: left; margin-right: 0px;" />
 
 ---
