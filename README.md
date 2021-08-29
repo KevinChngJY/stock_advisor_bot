@@ -79,5 +79,9 @@ https://github.com/KevinChngJY/stock_advisor_bot/blob/main/Section5_RASA.md
 ### Milestone 1.2 RASA + Ngrok + Webhook connect to telegram Chatbot 
 https://github.com/KevinChngJY/stock_advisor_bot/blob/main/Section5_RASA_NGROK_Telegram.md
 
+### Milestone 1.3 RASA X [Optional]
 
+What is RASA X?
+Rasa X is a tool for Conversation-Driven Development (CDD), the process of listening to your users and using those insights to improve your AI assistant.
 
+Documentation : https://rasa.com/docs/rasa-x/
