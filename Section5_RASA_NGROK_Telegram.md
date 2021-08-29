@@ -43,7 +43,7 @@ Add the following telegram line : <br>
 
 At this moment, we don't have the ngrok link as we have not yet run ngrok. 
 
-<img src="https://github.com/KevinChngJY/stock_advisor_bot/blob/main/Image/credentiasyml.png" width="735" height="310"
+<img src="https://github.com/KevinChngJY/stock_advisor_bot/blob/main/Image/credentiasyml.png" width="635" height="410"
      style="float: left; margin-right: 0px;" />
 
 (Put your own token to the link in the diagram above)
@@ -64,7 +64,7 @@ Then you would see the outcome as follows:
 
 Copy the https ngrok link in the diagram above and paste into the credential file:
 
-<img src="https://github.com/KevinChngJY/stock_advisor_bot/blob/main/Image/credential2.png" width="735" height="310"
+<img src="https://github.com/KevinChngJY/stock_advisor_bot/blob/main/Image/credential2.png" width="635" height="410"
      style="float: left; margin-right: 0px;" />
 
 
