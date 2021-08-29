@@ -78,4 +78,25 @@ Copy the https ngrok link in the diagram above and paste into the credential fil
 Take note that you have to put /webhooks/telegram/webhook behind the ngrok link. 
 
 
+---
 
+## SECTION 6 : Run RASA,RASA X and ngrok
+
+Open new terminal and cd to the root folder of RASA, run rasa open source server:
+```
+rasa run
+```
+
+Open new terminal and cd to the root folder of RASA, run rasa actions server:
+```
+rasa run actions
+```
+
+We have run ngrok in the previous section, if you accidentally close the terminal/terminate ngrok, please open new terminal to run it. (For everytime you run ngrok, you will get different https url link, therefore you have to re-configure the credential file and re-run the rasa open source server (rasa run).
+
+
+---
+
+## SECTION 7 : Verify the Webhook Connection and Chat to chatbot in the Telegram
+
+Open terminal, run
