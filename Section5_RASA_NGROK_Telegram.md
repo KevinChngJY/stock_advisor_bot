@@ -104,5 +104,5 @@ https://api.telegram.org/bot<bot_token>/getWebhookInfo
 
 Chat to your chatbot in the telegram, search your chatbotname and say hi:
 
-<img src="https://github.com/KevinChngJY/stock_advisor_bot/blob/main/Image/chatbot1.png" width="535" height="510"
+<img src="https://github.com/KevinChngJY/stock_advisor_bot/blob/main/Image/chatbot1.png" width="635" height="510"
      style="float: left; margin-right: 0px;" />
