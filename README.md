@@ -87,3 +87,10 @@ What is RASA X?
 Rasa X is a tool for Conversation-Driven Development (CDD), the process of listening to your users and using those insights to improve your AI assistant.
 
 Documentation : https://rasa.com/docs/rasa-x/
+
+---
+## SECTION 6 : Content/Response for Chatbot (IPA)
+
+### Milestone 2.1 Stock Information
+
+Functional Architecture:
