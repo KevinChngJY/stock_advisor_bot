@@ -7,6 +7,9 @@ In this milestone, we are looking to set up telegram chatbot using BotFather, yo
 
 ## SECTION 1 : Architecture 
 
+<img src="https://github.com/KevinChngJY/stock_advisor_bot/blob/main/Image/Screenshot%202021-08-29%20at%204.32.06%20PM.png" width="855" height="350"
+     style="float: left; margin-right: 0px;" />
+
 ---
 
 ## SECTION 2 : Pre-requisite (Install Ngrok)
