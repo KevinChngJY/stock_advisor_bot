@@ -99,4 +99,9 @@ We have run ngrok in the previous section, if you accidentally close the termina
 
 ## SECTION 7 : Verify the Webhook Connection and Chat to chatbot in the Telegram
 
-Open terminal, run
+Verify the webhook connection, paste the following in the browser:
+https://api.telegram.org/bot<bot_token>/getWebhookInfo
+
+Chat to your chatbot in the telegram, search your chatbotname and say hi:
+<img src="https://github.com/KevinChngJY/stock_advisor_bot/blob/main/Image/chatbot1.png" width="335" height="510"
+     style="float: left; margin-right: 0px;" />
