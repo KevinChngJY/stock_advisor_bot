@@ -159,6 +159,7 @@ Above is illustrating the databse, not the full list. The full list of features 
 
 User can raise to admin for his expected stock information.
 
-Script for Acquire Stock Information from yahoo finance or other financial platform :
+Script for Acquire Stock Information from yahoo finance or other financial platform : <br>
+https://github.com/KevinChngJY/stock_advisor_bot/blob/main/Milestone2/milestone2_1_Stock%20Information.ipynb
 
 ### Milestone 2.2 Sentiment Analysis
