@@ -130,10 +130,10 @@ Above is illustrating the databse, not the full list. The full list of features 
 10) Daily High
 11) Yearly High
 12) Yearly Low
-13) Trading View Link
+13) Trading View Link <br>
 **Fundamental**
 14) PE Ratio
-15) Market Cap
+15) Market Cap <br>
 **Technical Aalysis : Oscillators**
 5) Accumulation/disctributor
 6) chaikin Money Flow
@@ -141,13 +141,13 @@ Above is illustrating the databse, not the full list. The full list of features 
 8) Stochastic Oscillator
 11) Percentage Price Oscillator
 12) Percentage Volume Oscillator
-13) Rate of Change
+13) Rate of Change <br>
 **Technical Analysis : Stoachastics**
-14) Williams %R
+14) Williams %R <br>
 **Technical Analysis : Indexes**
 15) Negative Volume Index
 17) Relative Strength Index (RSI) -14 days
-18) Relative Strength Index (RSI) - 28 days
+18) Relative Strength Index (RSI) - 28 days <br>
 **Technical Analysis : Indicators**
 23) On balanced volume
 25) Volume-Price Trend
