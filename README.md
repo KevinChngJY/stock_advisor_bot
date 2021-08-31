@@ -169,6 +169,9 @@ https://github.com/KevinChngJY/stock_advisor_bot/blob/main/Milestone2/milestone2
 
 Components of Architecture:
 
+<img src="https://github.com/KevinChngJY/stock_advisor_bot/blob/main/Image/Architecture2.PNG" width="755" height="350"
+     style="float: left; margin-right: 0px;" />
+
 ### Milestone 2.4 Portfolio Optimization and Asset Allocation
 
 
