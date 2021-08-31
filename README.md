@@ -98,7 +98,7 @@ Components of Architecture:
 <img src="https://github.com/KevinChngJY/stock_advisor_bot/blob/main/Image/ComponentsArchitecture1.PNG" width="755" height="350"
      style="float: left; margin-right: 0px;" />
      
-Data Structure:<b4>
+Data Structure:<br>
 (1) Used for Stock Tick Verification :
 | Stock |  Stock Tick |
 | :------------ | :-----------------------|
