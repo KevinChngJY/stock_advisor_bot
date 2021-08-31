@@ -104,5 +104,8 @@ Data Structure:<b4>
 | :------------ | :-----------------------|
 | APPL | AAPL |  |
 | Apple | AAPL |  |
+| MSFT | MSFT |
+| Microsoft Corporation | MSFT |
+| Microsoft | MSFT |
 
  if you key in non stock tick name, the stock tick verification will use your stock name to extract the stock tick name from database and proceed process with stock tick name.
