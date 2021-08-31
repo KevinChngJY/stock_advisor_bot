@@ -116,6 +116,8 @@ Data Structure:<br>
 | 12221 | 1 | 1 | 0 | 1 |
 | 23123 | 1 | 1 | 0 | 0 |
 
+"1" is the feature expected by User, "0" is the feature not expected by user
+
 Above is illustrating the databse, not the full list. The full list of features as follows:
 **Price/Volume**
 1) Current Price
