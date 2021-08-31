@@ -93,4 +93,7 @@ Documentation : https://rasa.com/docs/rasa-x/
 
 ### Milestone 2.1 Stock Information
 
-Functional Architecture:
+Components of Architecture:
+
+<img src="https://github.com/KevinChngJY/stock_advisor_bot/blob/main/Image/ComponentsArchitecture1.PNG" width="655" height="350"
+     style="float: left; margin-right: 0px;" />
