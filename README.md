@@ -172,7 +172,10 @@ Components of Architecture:
 <img src="https://github.com/KevinChngJY/stock_advisor_bot/blob/main/Image/Architecture2.PNG" width="755" height="350"
      style="float: left; margin-right: 0px;" />
      
-Web Crawling Script for Bursa : 
+Web Crawling Script for Bursa :<br>
+Required Packages : urllib,pandas,beautifulsoup,solenium,PhantomJS,requests<br>
+[you might need to figure out how to install PhantomJS yourself, it used to deal with JS WebCrawling]<br>
+https://github.com/KevinChngJY/stock_advisor_bot/blob/main/Milestone2/milestone2_3_Monitoring_Announcements.ipynb
 
 ### Milestone 2.4 Portfolio Optimization and Asset Allocation
 
