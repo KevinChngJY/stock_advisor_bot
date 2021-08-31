@@ -163,3 +163,25 @@ Script for Acquire Stock Information from yahoo finance or other financial platf
 https://github.com/KevinChngJY/stock_advisor_bot/blob/main/Milestone2/milestone2_1_Stock%20Information.ipynb
 
 ### Milestone 2.2 Sentiment Analysis
+
+
+### Milestone 2.3 Monitoring Annoucements
+
+Components of Architecture:
+
+### Milestone 2.4 Portfolio Optimization and Asset Allocation
+
+
+### Milestone 2.5 Stock Price Forecasting
+
+
+### Milestone 2.6 Reinforcement Learning for Trading Strategies
+
+---
+## SECTION 7 : Integration
+
+
+---
+## SECTION 8 : Deployment
+
+
