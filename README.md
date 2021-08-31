@@ -112,7 +112,7 @@ Data Structure:<b4>
 
 (2) Used for Return Expected Information to User :
 | User ID |  Current Price | Price Change | Price Change Percentage | Trading View Link |
-| :------------ | :-----------------------|:-----------------------|:-----------------------|:-----------------------|
+| :------------ | :---------|:-----------|:--------|:-------|
 | 12221 | 1 | 1 | 0 | 1
 | 23123 | 1 | 1 | 0 | 0
      
