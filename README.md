@@ -98,4 +98,11 @@ Components of Architecture:
 <img src="https://github.com/KevinChngJY/stock_advisor_bot/blob/main/Image/ComponentsArchitecture1.PNG" width="755" height="350"
      style="float: left; margin-right: 0px;" />
      
-Data Architecture: 
+Data Structure:<b4>
+(1) Used for Stock Tick Verification :
+| Stock |  Stock Tick |
+| :------------ | :-----------------------|
+| APPL | AAPL |  |
+| Apple | AAPL |  |
+
+ if you key in non stock tick name, the stock tick verification will use your stock name to extract the stock tick name from database and proceed process with stock tick name.
