@@ -108,4 +108,12 @@ Data Structure:<b4>
 | Microsoft Corporation | MSFT |
 | Microsoft | MSFT |
 
- if you key in non stock tick name, the stock tick verification will use your stock name to extract the stock tick name from database and proceed process with stock tick name.
+ if you key in non stock tick name, the stock tick verification will use your stock name to extract the stock tick name from database and proceed process with stock tick name.<br>
+
+(2) Used for Return Expected Information to User :
+| User ID |  Current Price | Price Change | Price Change Percentage | Trading View Link
+| :------------ | :-----------------------|
+| 12221 | 1 | 1 | 0 | 1
+| 23123 | 1 | 1 | 0 | 0
+     
+User can raise to admin for his expected stock information.
