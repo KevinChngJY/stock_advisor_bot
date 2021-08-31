@@ -117,3 +117,7 @@ Data Structure:<br>
 | 23123 | 1 | 1 | 0 | 0
      
 User can raise to admin for his expected stock information.
+
+Script for Acquire Stock Information from yahoo finance or other financial platform :
+
+### Milestone 2.2 Sentiment Analysis
