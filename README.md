@@ -113,9 +113,48 @@ Data Structure:<br>
 (2) Used for Return Expected Information to User :
 | User ID |  Current Price | Price Change | Price Change Percentage | Trading View Link |
 | :------------ | :---------|:-----------|:--------|:-------|
-| 12221 | 1 | 1 | 0 | 1
-| 23123 | 1 | 1 | 0 | 0
-     
+| 12221 | 1 | 1 | 0 | 1 |
+| 23123 | 1 | 1 | 0 | 0 |
+
+Above is illustrating the databse, not the full list. The full list of features as follows:
+**Price/Volume**
+1) Current Price
+2) Price Change
+3) Price Change Percentage
+4) Current Volume
+5) Previous Close Price
+6) Open Price
+7) Get 10 Days Average Volume
+8) Get 3 Months Average Daily Volume
+9) Get Daily Low Volume
+10) Daily High
+11) Yearly High
+12) Yearly Low
+13) Trading View Link
+**Fundamental**
+14) PE Ratio
+15) Market Cap
+**Technical Aalysis : Oscillators**
+5) Accumulation/disctributor
+6) chaikin Money Flow
+7) Moving Average Convergennce/Divergence
+8) Stochastic Oscillator
+11) Percentage Price Oscillator
+12) Percentage Volume Oscillator
+13) Rate of Change
+**Technical Analysis : Stoachastics**
+14) Williams %R
+**Technical Analysis : Indexes**
+15) Negative Volume Index
+17) Relative Strength Index (RSI) -14 days
+18) Relative Strength Index (RSI) - 28 days
+**Technical Analysis : Indicators**
+23) On balanced volume
+25) Volume-Price Trend
+28) Volume Weighted Average Price
+30) 50 Days Moving Average
+31) 200 Days Moving Average
+
 User can raise to admin for his expected stock information.
 
 Script for Acquire Stock Information from yahoo finance or other financial platform :
