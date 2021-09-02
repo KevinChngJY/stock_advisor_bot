@@ -179,6 +179,8 @@ https://github.com/KevinChngJY/stock_advisor_bot/blob/main/Milestone2/milestone2
 
 ### Milestone 2.4 Portfolio Optimization and Asset Allocation
 
+<img src="https://github.com/KevinChngJY/stock_advisor_bot/blob/main/Image/Architect3.PNG" width="755" height="350"
+     style="float: left; margin-right: 0px;" />
 
 ### Milestone 2.5 Stock Price Forecasting
 
