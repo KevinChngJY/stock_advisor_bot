@@ -185,7 +185,7 @@ Components of Architecture:
      style="float: left; margin-right: 0px;" />
  
 Script for Portfolio Optimization and Asset Allocation :<br>
-
+https://github.com/KevinChngJY/stock_advisor_bot/blob/main/Milestone2/milestone2_4_Portfolio_analysis.ipynb
 
 ### Milestone 2.5 Stock Price Forecasting
 
