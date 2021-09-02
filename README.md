@@ -186,6 +186,7 @@ Components of Architecture:
  
 Script for Portfolio Optimization and Asset Allocation :<br>
 https://github.com/KevinChngJY/stock_advisor_bot/blob/main/Milestone2/milestone2_4_Portfolio_analysis.ipynb
+We will use image hosting(imgur) as Rasa only can send link(not able to send image) to telegram chatbot.
 
 ### Milestone 2.5 Stock Price Forecasting
 
