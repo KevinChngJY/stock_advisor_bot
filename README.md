@@ -35,9 +35,10 @@
 | 2.1 Stock Price |  |  |
 | 2.2 Sentiment Analysis |  |  |
 | 3.0 Integration |  |  |
-| 3.1 Authentication Login In | | |
-| 3.2 Database (Django) |  |  |
-| 3.3 RASA + Django + Celery + Database | | |
+| 3.1 Setting up Django| | |
+| 3.2 Authentication Login In | | |
+| 3.3 Database (Django) |  |  |
+| 3.4 RASA + Django + Celery + Database | | |
 | 4.0 Deployment |  |  |
 | 4.1 Deploy in Local Host |  |  |
 | 4.2 Deploy to Server (Digital Ocean) |  |  |
