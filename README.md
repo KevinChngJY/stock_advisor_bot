@@ -202,8 +202,13 @@ We will use image hosting(imgur) as Rasa only can send link(not able to send ima
 
 ### Milestone 3.1 Setting up Django
 
-Reference 1 : https://pythonistaplanet.com/how-to-create-a-django-project-in-anaconda-very-easily/
-Reference 2 : https://www.jcchouinard.com/get-started-with-django/
+Reference 1 : https://pythonistaplanet.com/how-to-create-a-django-project-in-anaconda-very-easily/ <br>
+Reference 2 : https://www.jcchouinard.com/get-started-with-django/ <br>
+
+You may refer to the 2 references above to learn how to set up django in local PC.<br>
+For this project, it did the following actions:<br>
+
+(1) 
 
 ### Milestone 3.2 Authentication Login
 
