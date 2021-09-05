@@ -202,7 +202,8 @@ We will use image hosting(imgur) as Rasa only can send link(not able to send ima
 
 ### Milestone 3.1 Setting up Django
 
-Reference : https://pythonistaplanet.com/how-to-create-a-django-project-in-anaconda-very-easily/
+Reference 1 : https://pythonistaplanet.com/how-to-create-a-django-project-in-anaconda-very-easily/
+Reference 2 : https://www.jcchouinard.com/get-started-with-django/
 
 
 ---
