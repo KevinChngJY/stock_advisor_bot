@@ -205,6 +205,30 @@ We will use image hosting(imgur) as Rasa only can send link(not able to send ima
 Reference 1 : https://pythonistaplanet.com/how-to-create-a-django-project-in-anaconda-very-easily/
 Reference 2 : https://www.jcchouinard.com/get-started-with-django/
 
+### Milestone 3.2 Authentication Login
+
+For production system, it is recommended to use Django in-built Authentication system which can help you manage the session accross the request:
+https://www.google.com/search?client=safari&rls=en&q=didjango+authentication&ie=UTF-8&oe=UTF-8
+
+Therefore, in case that you wanted to develop your chatbot further to website or etc, I believe it has additional advantage.
+
+For now, the main purpose of django is providing us the database interface to manage the sqlite. 
+[Django is a comprehensive web framework, you can explore yourself to figure additional functions added to your system]
+
+In this milestone, we will go through the following steps:
+1) Create database in the models.py (User login Database)
+2) Update database using Django Admin Portal
+3) Update Rasa for Authentication process:
+
+### Milestone 3.3 Database Django
+
+Setting User list :
+
+
+Setting Stock Tick Validation Database (Bursa) :
+
+
+Setting Stock for Annoucement Monitoring : 
 
 ---
 ## SECTION 8 : Deployment
