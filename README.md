@@ -193,7 +193,7 @@ https://github.com/KevinChngJY/stock_advisor_bot/blob/main/Milestone2/milestone2
 We will use image hosting(imgur) as Rasa only can send link(not able to send image) to telegram chatbot.
 
 ### Milestone 2.5 Stock Price Forecasting
-
+Script : https://github.com/KevinChngJY/stock_advisor_bot/blob/main/Milestone2/milestone2_5_Stock_price_time_series_forecasting.ipynb
 
 ### Milestone 2.6 Reinforcement Learning for Trading Strategies
 
