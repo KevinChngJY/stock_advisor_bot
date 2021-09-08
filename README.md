@@ -194,6 +194,24 @@ We will use image hosting(imgur) as Rasa only can send link(not able to send ima
 
 ### Milestone 2.5 Stock Price Forecasting
 
+In time series forecasting, there are couple of techniques you may consider : <br>
+Traditional Approaches : <br>
+1) Autoregression (AR) <br>
+2) Moving Average <br>
+3) Autoregressive Moving Average <br>
+4) Autoregressive Integrated Moving Average (ARIMA) <br>
+5) Seasonal Autoregressive Integrated Moving-Average (SARIMA) <br>
+6) Seasonal Autoregressive Integrated Moving Average with Exogenous Regressors (SARIMAX) <br>
+8) Regression Model with ARIMA Error <br>
+9) Vector Autoregression (VAR) <br>
+10) GARCH Model <br>
+11) Glostan, Jagannathan and Runkle GARCH Model <br>
+you may refer to MATLAB examples in the following link for you to understand how undermentioned models workout :<br>
+https://www.mathworks.com/matlabcentral/fileexchange/74211-11-classical-time-series-forecasting-methods-in-matlab
+
+For latest trend, Data Scientist started to explore AI techniques (ML,DL-LSTM,RCNN) in time series forecasting.
+However, for this project, we only use ARIMA for this milestone.
+
 <img src="https://github.com/KevinChngJY/stock_advisor_bot/blob/main/Image/architecture5.png" width="755" height="350"
      style="float: left; margin-right: 0px;" />
      
