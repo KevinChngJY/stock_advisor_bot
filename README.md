@@ -180,7 +180,7 @@ Required Packages : urllib,pandas,beautifulsoup,solenium,PhantomJS,requests<br>
 [you might need to figure out how to install PhantomJS yourself, it used to deal with JS WebCrawling]<br>
 https://github.com/KevinChngJY/stock_advisor_bot/blob/main/Milestone2/milestone2_3_Monitoring_Announcements.ipynb
 
-For this project, it is only applicable for Bursa as we don't develop script to "web-crawl" announcements from other stock exchange. <br>
+For this project, it is only applicable for Bursa as we don't do "web-crawling" for announcements in other stock exchange. <br>
 However, as it is "hobby project", it is okay to do "web-crawling" to illustrate the concept. For real project, you are hughly recommend to purchase api from stock exchange platform.
 
 ### Milestone 2.4 Portfolio Optimization and Asset Allocation
