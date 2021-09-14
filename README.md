@@ -14,7 +14,7 @@ Features of Bot :
 | 3.0 Monitoring Announcement | Market Announcement Notification according to user’s stock watchlist |  
 | 4.0 Portfolio Optimization and Asset Allocation | Correlation, Risk Assessment, Portfolio Optimization and Asset Allocation, etc|
 | 5.0 Time Series Forecasting | Classical Time Series Forecasting Technique, Machine Learning and Deep Learning |  
-| 6.0 Reinforcement Learning | Trading strategies advise according to result of RL policy and traditional benchmark (RSI and etc![image](https://user-|  
+| 6.0 Reinforcement Learning | Trading strategies advise according to result of RL policy and traditional benchmark (RSI and etc) 
 
 ---
 
