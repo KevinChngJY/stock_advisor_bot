@@ -14,6 +14,8 @@
 <img src="https://github.com/KevinChngJY/stock_advisor_bot/blob/main/Image/architecture1.PNG" width="655" height="350"
      style="float: left; margin-right: 0px;" />
      
+API Gateway of system is using ngrok (Between telegram and Rasa OpenSource Server)
+     
 ## DEPLOY TO SERVER (DIGITAL OCEAN)
 
 ## DEPLOY TO CONTAINER
