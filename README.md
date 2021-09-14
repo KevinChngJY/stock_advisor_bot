@@ -11,7 +11,7 @@
 ## SECTION 2 : SYSTEM ARCHITECTURE 
 ## DEPLOY IN LOCAL HOST
 
-<img src="https://github.com/KevinChngJY/stock_advisor_bot/blob/main/Image/architecture1.png" width="655" height="350"
+<img src="https://github.com/KevinChngJY/stock_advisor_bot/blob/main/Image/architecture1.PNG" width="655" height="350"
      style="float: left; margin-right: 0px;" />
      
 ## DEPLOY TO SERVER (DIGITAL OCEAN)
