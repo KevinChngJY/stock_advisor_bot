@@ -46,6 +46,10 @@ API Gateway of system is using ngrok (Between telegram and Rasa OpenSource Serve
 | 2.0 Content/Response for Chatbot (IPA) |  |  |
 | 2.1 Stock Price |  |  |
 | 2.2 Sentiment Analysis |  |  |
+| 2.3 Monitoring Announcement |  |  |
+| 2.4 Portfolio Optimization and Asset Allocation |  |  |
+| 2.5 Time Series Forecasting |  |  |
+| 2.6 Reinforcement Learning |  |  |
 | 3.0 Integration |  |  |
 | 3.1 Setting up Django| | |
 | 3.2 Authentication Login In | | |
