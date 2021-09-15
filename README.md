@@ -37,29 +37,30 @@ API Gateway of system is using ngrok (Between telegram and Rasa OpenSource Serve
 ---
 ## SECTION 4 : PROJECT - MILESTONES
 
-| Milestones |  Duration | Remarks |
+| Milestones |  Duration (th Week) | Remarks |
 | :------------ | :-----------------------|:----------------|
-| 1.0 RASA |  |  |
-| 1.1 RASA in local host|  |  |
-| 1.2 RASA + Ngrok + Webhook connect to telegram Chatbot |  |  |
+| 1.0 RASA | 0-1 |  |
+| 1.1 RASA in local host| 0-1 |  |
+| 1.2 RASA + Ngrok + Webhook connect to telegram Chatbot | 0-1 |  |
 | 1.3 RASA X |  |  |
-| 2.0 Content/Response for Chatbot (IPA) |  |  |
-| 2.1 Stock Price |  |  |
-| 2.2 Sentiment Analysis |  |  |
-| 2.3 Monitoring Announcement |  |  |
-| 2.4 Portfolio Optimization and Asset Allocation |  |  |
-| 2.5 Time Series Forecasting |  |  |
-| 2.6 Reinforcement Learning |  |  |
-| 3.0 Integration |  |  |
-| 3.1 Setting up Django| | |
-| 3.2 Authentication Login In | | |
-| 3.3 Database (Django) - Structures & Data WebCrawling to update Database |  |  |
-| 3.4 RASA + Django + Celery + Database | | |
+| 2.0 Content/Response for Chatbot (IPA) | 1-7 |  |
+| 2.1 Stock Price | 1-5 |  |
+| 2.2 Sentiment Analysis | 1-5 |  |
+| 2.3 Monitoring Announcement | 1-5 |  |
+| 2.4 Portfolio Optimization and Asset Allocation | 1-5 |  |
+| 2.5 Time Series Forecasting | 1-5 |  |
+| 2.6 Reinforcement Learning | 5-7 |  |
+| 3.0 Integration | 7-10 |  |
+| 3.1 Setting up Django| 7-8 | |
+| 3.2 Authentication Login In | 7-8 | |
+| 3.3 Database (Django) - Structures & Data WebCrawling to update Database |  8-9 |  |
+| 3.4 RASA + Django + Celery + Database | 9-10 | |
 | 4.0 Deployment |  |  |
-| 4.1 Deploy in Local Host |  |  |
-| 4.2 Deploy to Server (Digital Ocean) |  |  |
-| 4.3 Deploy to Container |  |  |
+| 4.1 Deploy in Local Host | 10 |  |
+| 4.2 Deploy to Server (Digital Ocean) | 11 |  |
+| 4.3 Deploy to Container | 12 |  |
 
+The project take estimated 12 weeks (3months) to complete, it does not include bug-fixing and UAT process.
 
 ---
 ## SECTION 5 : Milestone 1 RASA
