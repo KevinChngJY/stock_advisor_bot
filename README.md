@@ -253,6 +253,16 @@ Script : https://github.com/KevinChngJY/stock_advisor_bot/blob/main/Milestone2/m
 
 ### Milestone 2.6 Reinforcement Learning for Trading Strategies
 
+**What is Reinforcement Learning?**
+Reinforcement learning is another type of machine learning besides supervised and unsupervised learning. This is an agent-based learning system where the agent takes actions in an environment where the goal is to maximize the record. Reinforcement learning does not require the usage of labeled data like supervised learning.
+
+Reinforcement learning works very well with less historical data. It makes use of the value function and calculates it on the basis of the policy that is decided for that action.
+
+**In this Milestone**
+
+Script for Reinforcement Learning :
+Script for RSI Indicators :
+
 ---
 ## SECTION 7 : Integration
 
