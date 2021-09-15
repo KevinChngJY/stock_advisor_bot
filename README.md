@@ -53,7 +53,7 @@ API Gateway of system is using ngrok (Between telegram and Rasa OpenSource Serve
 | 3.0 Integration |  |  |
 | 3.1 Setting up Django| | |
 | 3.2 Authentication Login In | | |
-| 3.3 Database (Django) |  |  |
+| 3.3 Database (Django) - Structures & Data WebCrawling to update Database |  |  |
 | 3.4 RASA + Django + Celery + Database | | |
 | 4.0 Deployment |  |  |
 | 4.1 Deploy in Local Host |  |  |
