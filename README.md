@@ -258,6 +258,14 @@ Reinforcement learning is another type of machine learning besides supervised an
 
 Reinforcement learning works very well with less historical data. It makes use of the value function and calculates it on the basis of the policy that is decided for that action.
 
+**Define the Reinforcement Learning Environment**
+MDP for Stock Price Prediction:
+
+Agent – An Agent A that works in Environment E
+Action – Buy/Sell/Hold
+States – Data values
+Rewards – Profit / Loss
+
 **In this Milestone**
 
 Script for Reinforcement Learning :
