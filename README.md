@@ -277,18 +277,20 @@ For now, the main purpose of django is providing us the database interface to ma
 
 In this milestone, we will go through the following steps:
 1) Create database in the models.py (User login Database)
-2) Update database using Django Admin Portal
+2) Update database (User List) using Django Admin Portal
 3) Update Rasa for Authentication process:
 
 ### Milestone 3.3 Database Django
 
-Setting User list :
+There are 5 table in the database for this project :
 
+Setting User list :
 
 Setting Stock Tick Validation Database (Bursa) :
 
-
 Setting Stock for Annoucement Monitoring : 
+
+### Milestone 3.4 RASA + Django + Celery + Database
 
 ---
 ## SECTION 8 : Deployment
