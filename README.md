@@ -180,7 +180,24 @@ Script for Acquire Stock Information from yahoo finance or other financial platf
 https://github.com/KevinChngJY/stock_advisor_bot/blob/main/Milestone2/milestone2_1_Stock%20Information.ipynb
 
 ### Milestone 2.2 Sentiment Analysis
+Thee are various well known NLB libraries in Python : <br>
 
+**Rule-based methods:** <br>
+TextBlob: Simple rule-based API for sentiment analysis <br>
+VADER: Parsimonious rule-based model for sentiment analysis of social media text. <br>
+**Feature-based methods:**
+Logistic Regression: Generalized linear model in Scikit-learn.
+Support Vector Machine (SVM): Linear model in Scikit-learn with a stochastic gradient descent (SGD) optimizer for gradient loss.
+**Embedding-based methods:**
+FastText: An NLP library that uses highly efficient CPU-based representations of word embeddings for classification tasks.
+Flair: A PyTorch-based framework for NLP tasks such as sequence tagging and classification.
+
+For this section, we use VADER approach to perform sentiment analysis for the contents in Reddit. <br>
+To know Vader further, you may refer to the following link : https://www.geeksforgeeks.org/python-sentiment-analysis-using-vader/ <br>
+
+With Reddit Python API package, we search for 4 topics which are 'wallstreetbets', 'stocks', 'investing', 'stockmarket’. From this 4 topics, it computes the top 10 most mentioned US stocks and subsequently use lexicon-based approach (VADER) to perform the sentiment analysis of the top 10 most mentioned US stocks from the comments in the reddit.
+
+Script : https://github.com/KevinChngJY/stock_advisor_bot/tree/main/Milestone2/Milestone2_2_Sentiment_Analysis
 
 ### Milestone 2.3 Monitoring Annoucements
 
