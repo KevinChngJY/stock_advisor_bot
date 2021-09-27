@@ -251,7 +251,7 @@ However, for this project, we only use ARIMA for this milestone.
      
 Script : https://github.com/KevinChngJY/stock_advisor_bot/blob/main/Milestone2/milestone2_5_Stock_price_time_series_forecasting.ipynb
 
-### Milestone 2.6 Reinforcement Learning for Trading Strategies
+### Milestone 2.6 Reinforcement Learning and Evolving Learning for Trading Strategies
 
 **What is Reinforcement Learning?**
 Reinforcement learning is another type of machine learning besides supervised and unsupervised learning. This is an agent-based learning system where the agent takes actions in an environment where the goal is to maximize the record. Reinforcement learning does not require the usage of labeled data like supervised learning.
