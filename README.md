@@ -39,11 +39,7 @@ API Gateway of system is using ngrok (Between telegram and Rasa OpenSource Serve
 ## DEPLOY TO CONTAINER
 
 ---
-## SECTION 3 : EXECUTIVE SUMMARY / PAPER ABSTRACT
-
-
----
-## SECTION 4 : PROJECT - MILESTONES
+## SECTION 3 : PROJECT - MILESTONES
 
 | Milestones |  Duration (th Week) | Remarks |
 | :------------ | :-----------------------|:----------------|
@@ -72,7 +68,7 @@ API Gateway of system is using ngrok (Between telegram and Rasa OpenSource Serve
 The project take estimated 12 weeks (3months) to complete, it does not include bug-fixing and UAT process.
 
 ---
-## SECTION 5 : Milestone 1 RASA
+## SECTION 4 : Milestone 1 RASA
 
 ### What is RASA?
 
@@ -116,7 +112,7 @@ Rasa X is a tool for Conversation-Driven Development (CDD), the process of liste
 Documentation : https://rasa.com/docs/rasa-x/
 
 ---
-## SECTION 6 : Content/Response for Chatbot (IPA)
+## SECTION 5 : Content/Response for Chatbot (IPA)
 
 ### Milestone 2.1 Stock Information
 
@@ -281,7 +277,7 @@ Script for Reinforcement Learning :<br>
 Script for RSI Indicators :
 
 ---
-## SECTION 7 : Integration
+## SECTION 6 : Integration
 
 ### Milestone 3.1 Setting up Django
 
@@ -321,6 +317,6 @@ Setting Stock for Annoucement Monitoring :
 ### Milestone 3.4 RASA + Django + Celery + Database
 
 ---
-## SECTION 8 : Deployment
+## SECTION 7 : Deployment
 
 
