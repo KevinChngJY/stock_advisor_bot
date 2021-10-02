@@ -23,6 +23,12 @@ Below is the menu of the bot:<br>
 
 <img src="https://github.com/KevinChngJY/stock_advisor_bot/blob/main/Image/bot_menu.PNG" width="455" height="350"
      style="float: left; margin-right: 0px;" />
+     
+Demonstration of the system (Video) :
+
+
+the following section 2 - 5 explains the steps how we build the system.
+if you are looking to run the system, you may direct jump to seciuon 6 : Guide to run the system locally.
 
 ---
 
