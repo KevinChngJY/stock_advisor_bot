@@ -1,10 +1,12 @@
-
+(Still in development)
 ---
 
 ## SECTION 1 : PROJECT TITLE
 ## Stock Advisor Bot
 
-(Still in development)
+The project envisions to develop a TELEGRAM STOCK ADVISOR BOT to (a) empower people with useful stock information and (2) bring convenience and time savings to people.
+
+The BOT will be equipped with the following functions and features :
 
 Features of Bot :
 | Modules |  Features | 
@@ -15,6 +17,10 @@ Features of Bot :
 | 4.0 Portfolio Optimization and Asset Allocation | Correlation, Risk Assessment, Portfolio Optimization and Asset Allocation, etc|
 | 5.0 Time Series Forecasting | Classical Time Series Forecasting Technique, Machine Learning and Deep Learning |  
 | 6.0 Reinforcement Learning | Trading strategies advise according to result of RL policy and traditional benchmark (RSI and etc) 
+
+The TELEGRAM BOT is designed with the end-user in mind, and the dialogue/workflow is designed to be as user friendly and iniuitive as possible.
+
+
 
 ---
 
