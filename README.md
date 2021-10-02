@@ -20,7 +20,7 @@ Features of Bot :
 
 The TELEGRAM BOT is designed with the end-user in mind, and the dialogue/workflow is designed to be as user friendly and iniuitive as possible.
 
-<img src="https://github.com/KevinChngJY/stock_advisor_bot/blob/main/Image/bot_menu.PNG" width="555" height="350"
+<img src="https://github.com/KevinChngJY/stock_advisor_bot/blob/main/Image/bot_menu.PNG" width="455" height="350"
      style="float: left; margin-right: 0px;" />
 
 ---
