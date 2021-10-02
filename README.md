@@ -69,7 +69,7 @@ API Gateway of system is using ngrok (Between telegram and Rasa OpenSource Serve
 | 4.1 Deploy in Local Host | 10 |  |
 | 4.2 Deploy to Server (Digital Ocean) | 11 |  |
 | 4.3 Deploy to Container | 12 |  |
-| 5.0 User-Interface | 12 |  |
+| 5.0 User-Interface & Report | 12 |  |
 
 The project take estimated 12 weeks (3months) to complete, it does not include bug-fixing and UAT process.
 
@@ -280,9 +280,11 @@ Action – Buy/Sell/Hold<br>
 States – Data values<br>
 Rewards – Profit / Loss<br>
 
-**In this Milestone**
+**Script - Reinforcement Learning**
 
-Script for Reinforcement Learning :<br>
+In this milestone, we use deep Q-Learning algorithm to train the policy for trading strategy. 
+Script for Reinforcement Learning : 
+
 Script for RSI Indicators :
 
 ---
