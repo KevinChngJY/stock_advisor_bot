@@ -18,7 +18,7 @@ Features of Bot :
 | 5.0 Time Series Forecasting | Classical Time Series Forecasting Technique, Machine Learning and Deep Learning |  
 | 6.0 Reinforcement Learning | Trading strategies advise according to result of RL policy and traditional benchmark (RSI and etc) 
 
-The TELEGRAM BOT is designed with the end-user in mind, and the dialogue/workflow is designed to be as user friendly and iniuitive as possible.
+The TELEGRAM BOT is designed with the end-user in mind, and the dialogue/workflow is designed to be as user friendly and iniuitive as possible.<br>
 Below is the menu of the bot:
 
 <img src="https://github.com/KevinChngJY/stock_advisor_bot/blob/main/Image/bot_menu.PNG" width="455" height="350"
