@@ -331,3 +331,19 @@ Setting Stock for Annoucement Monitoring :
 ## SECTION 7 : Deployment
 
 
+# self-recording
+start ngrok
+
+ngrok http 5005
+
+Start django server
+python manage.py runserver
+
+start celery
+celery -A chatbot worker -B -l INFO
+
+Start rasa
+rasa run
+
+start action server
+rasa run actions
