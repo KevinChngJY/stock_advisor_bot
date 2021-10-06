@@ -264,6 +264,8 @@ Script : https://github.com/KevinChngJY/stock_advisor_bot/blob/main/Milestone2/m
 
 ### Milestone 2.6 Reinforcement Learning and Evolving Learning for Trading Strategies
 
+In this milestone, there are 2 algorihtms (RL and GA) to optimize the trading strategies:
+
 **What is Reinforcement Learning?**
 Reinforcement learning is another type of machine learning besides supervised and unsupervised learning. This is an agent-based learning system where the agent takes actions in an environment where the goal is to maximize the record. Reinforcement learning does not require the usage of labeled data like supervised learning.
 
@@ -280,12 +282,20 @@ Action – Buy/Sell/Hold<br>
 States – Data values<br>
 Rewards – Profit / Loss<br>
 
-**Script - Reinforcement Learning**
-
+**Script - Reinforcement Learning**<br>
 In this milestone, we use deep Q-Learning algorithm to train the policy for trading strategy. 
-Script for Reinforcement Learning : 
+Script for Reinforcement Learning : https://github.com/KevinChngJY/stock_advisor_bot/tree/main/Milestone2/Milestone2_6_Reinforcement_Learning_Trading_Strategy
 
-Script for RSI Indicators :
+**What is Genetic Algorithm?**<br>
+In computer science and operations research, a genetic algorithm (GA) is a metaheuristic inspired by the process of natural selection that belongs to the larger class of evolutionary algorithms (EA). Genetic algorithms are commonly used to generate high-quality solutions to optimization and search problems by relying on biologically inspired operators such as mutation, crossover and selection.
+
+In layman term, it is a type of global optimization algorihm to optimize the parameters in your complex mathematical equations/objective function
+
+**Define the Objective Function**<br>
+
+**Script - Reinforcement Learning**<br>
+In this script, we don't include mutation in the GA algorithm.
+Script for RSI Indicators :https://github.com/KevinChngJY/stock_advisor_bot/tree/main/Milestone2/Milestone2_6_Evolving_Learning-Trading_Algorithm
 
 ---
 ## SECTION 6 : Integration
