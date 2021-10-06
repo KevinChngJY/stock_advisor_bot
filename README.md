@@ -40,7 +40,7 @@ if you are looking to run the system, you may direct jump to seciuon 6 : Guide t
      
 API Gateway of system is using ngrok (Between telegram and Rasa OpenSource Server)
      
-## DEPLOY TO SERVER (DIGITAL OCEAN)
+## DEPLOY TO SERVER (DIGITAL OCEAN) : 2 Server Machine or 3 Server Machine
 
 ## DEPLOY TO CONTAINER
 
