@@ -357,3 +357,12 @@ rasa run
 
 start action server
 rasa run actions
+
+backlog to complete
+1) Documentation milestone 2.6
+2) Documentation 3.1
+3) Documentation 3.2
+4) Documentation 3.3
+5) Documentation 3.4
+6) Login Page for django 
+7) RL/GA - one page enough...when trying then loading, once done, then display the result in table and advise should they buy or not.
