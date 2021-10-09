@@ -41,8 +41,10 @@ if you are looking to run the system, you may direct jump to seciuon 6 : Guide t
 API Gateway of system is using ngrok (Between telegram and Rasa OpenSource Server)
      
 ## DEPLOY TO SERVER (DIGITAL OCEAN) : 2 Server Machine or 3 Server Machine
+(Not in the scope of this project)
 
 ## DEPLOY TO CONTAINER
+(Not in the scope of this project)
 
 ---
 ## SECTION 3 : PROJECT - MILESTONES
@@ -334,20 +336,23 @@ Telegramid is required for the features 3 - 2.3 Monitoring Annoucements. Once th
 <img src="https://github.com/KevinChngJY/stock_advisor_bot/blob/main/Image/userdatabase_django.png" width="455" height="200"
      style="float: left; margin-right: 0px;" />
      
-*How do you get the telegramid?*
-
+**How do you get the telegramid?**
      
 4) Update Rasa for Authentication process
 
 ### Milestone 3.3 Database Django
 
-There are 5 table in the database for this project :
+There are 5 table in the database for this project : 
 
-Setting User list :
+**User list :** <br>
 
-Setting Stock Tick Validation Database (Bursa) :
+**Option1_selection :** <br>
 
-Setting Stock for Annoucement Monitoring : 
+**Option3_stock_monitorings :** <br> 
+
+**sentimentanalysistop10 :** <br>
+
+bursalist : 
 
 ### Milestone 3.4 WebApp for Option 2.6 Reinforcement Learning and Evolving Learning for Trading Strategies
 
