@@ -318,9 +318,9 @@ For now, the main purpose of django is providing us the database interface to ma
 [Django is a comprehensive web framework, you can explore yourself to figure additional functions added to your system]
 
 In this milestone, we will go through the following steps:
-1) Create database in the models.py (User login Database:
+1) Create database in the models.py (User login Database):
 
-<img src="https://github.com/KevinChngJY/stock_advisor_bot/blob/main/Image/userdatabase.png" width="255" height="100"
+<img src="https://github.com/KevinChngJY/stock_advisor_bot/blob/main/Image/userdatabase.png" width="455" height="300"
      style="float: left; margin-right: 0px;" />
      
 2) Update database (User List) using Django Admin Portal
