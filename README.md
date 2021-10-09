@@ -274,7 +274,7 @@ Reinforcement learning works very well with less historical data. It makes use o
 **Define the Reinforcement Learning Environment**<br>
 MDP for Stock Price Prediction: 
 
-<img src="https://github.com/KevinChngJY/stock_advisor_bot/blob/main/Image/MDP_Reinforcement_Learning.png" width="455" height="120"
+<img src="https://github.com/KevinChngJY/stock_advisor_bot/blob/main/Image/MDP_Reinforcement_Learning.png" width="455" height="300"
      style="float: left; margin-right: 0px;" />
 
 Agent – An Agent A that works in Environment E <br>
@@ -320,7 +320,7 @@ For now, the main purpose of django is providing us the database interface to ma
 In this milestone, we will go through the following steps:
 1) Create database in the models.py (User login Database):
 
-<img src="https://github.com/KevinChngJY/stock_advisor_bot/blob/main/Image/userdatabase.png" width="455" height="300"
+<img src="https://github.com/KevinChngJY/stock_advisor_bot/blob/main/Image/userdatabase.png" width="455" height="150"
      style="float: left; margin-right: 0px;" />
      
 2) Update database (User List) using Django Admin Portal
