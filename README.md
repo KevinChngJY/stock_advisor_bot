@@ -325,7 +325,17 @@ In this milestone, we will go through the following steps:
      
 2) Update database (User List) using Django Admin Portal
 
+Once you run django server locally "python manage.py runserver", then open the database portal : http://127.0.0.1:8000/admin. <br>
+Log in your username and password, then you would see the user list. <br>
+You could add your user to the userlist, you may notice that it requires you to add telegramid when you cratea a new user.<br>
+Telegramid is required for the features 3 - 2.3 Monitoring Annoucements. Once the user has added stock to the stock monitoring list, if there is any announcement for this stock, the celery system would send the announcement to the registered telegramid.
 
+<img src="https://github.com/KevinChngJY/stock_advisor_bot/blob/main/Image/userdatabase_django.png" width="455" height="150"
+     style="float: left; margin-right: 0px;" />
+     
+How do you get the telegramid?
+
+     
 4) Update Rasa for Authentication process
 
 ### Milestone 3.3 Database Django
