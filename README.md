@@ -294,7 +294,7 @@ In layman term, it is a type of global optimization algorihm to optimize the par
 **Define the Objective Function**<br>
 
 **Script - Reinforcement Learning**<br>
-In this script, we don't include mutation in the GA algorithm.
+In this script, we don't include mutation in the GA algorithm.<br>
 Script for RSI Indicators :https://github.com/KevinChngJY/stock_advisor_bot/tree/main/Milestone2/Milestone2_6_Evolving_Learning-Trading_Algorithm
 
 ---
@@ -306,9 +306,6 @@ Reference 1 : https://pythonistaplanet.com/how-to-create-a-django-project-in-ana
 Reference 2 : https://www.jcchouinard.com/get-started-with-django/ <br>
 
 You may refer to the 2 references above to learn how to set up django in local PC.<br>
-For this project, it did the following actions:<br>
-
-(1) 
 
 ### Milestone 3.2 Authentication Login
 
@@ -322,8 +319,9 @@ For now, the main purpose of django is providing us the database interface to ma
 
 In this milestone, we will go through the following steps:
 1) Create database in the models.py (User login Database)
-2) Update database (User List) using Django Admin Portal
-3) Update Rasa for Authentication process:
+
+3) Update database (User List) using Django Admin Portal
+4) Update Rasa for Authentication process
 
 ### Milestone 3.3 Database Django
 
@@ -334,6 +332,8 @@ Setting User list :
 Setting Stock Tick Validation Database (Bursa) :
 
 Setting Stock for Annoucement Monitoring : 
+
+### Milestone 3.4 WebApp for Option 2.6 Reinforcement Learning and Evolving Learning for Trading Strategies
 
 ### Milestone 3.4 RASA + Django + Celery + Database
 
