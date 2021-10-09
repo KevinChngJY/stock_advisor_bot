@@ -319,7 +319,8 @@ For now, the main purpose of django is providing us the database interface to ma
 
 In this milestone, we will go through the following steps:
 1) Create database in the models.py (User login Database)
-
+<img src="userdatabase.png" width="255" height="100"
+     style="float: left; margin-right: 0px;" />
 3) Update database (User List) using Django Admin Portal
 4) Update Rasa for Authentication process
 
