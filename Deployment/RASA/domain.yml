@@ -1,0 +1,257 @@
+version: "2.0"
+
+intents:
+  - greet
+  - start
+  - option1
+  - option1_1
+  - option1_2
+  - option1_3
+  - backMenu
+  - option2
+  - option2_1
+  - option3
+  - option3_1
+  - option3_2
+  - option3_3
+  - option4
+  - option4_1
+  - option4_2
+  - option4_3
+  - option5
+  - option5_1
+  - option6
+
+slots:
+  stocktick:
+    type: text
+    influence_conversation: false
+  username:
+    type: text
+    influence_conversation: false
+  password:
+    type: text
+    influence_conversation: false
+  newstock3:
+    type: text
+    influence_conversation: false
+  deletestock3:
+    type: text
+    influence_conversation: false
+  firststock:
+    type: text
+    influence_conversation: false
+  secondstock:
+    type: text
+    influence_conversation: false
+  correlationmonth:
+    type: text
+    influence_conversation: false
+  vstock:
+    type: text
+    influence_conversation: false
+  vmonth:
+    type: text
+    influence_conversation: false
+  stocklist:
+    type: text
+    influence_conversation: false
+  stockoption5:
+    type: text
+    influence_conversation: false
+  arima_parameters:
+    type: text
+    influence_conversation: false
+  authentication:
+    type: bool
+    initial_value: false
+    influence_conversation: false
+
+responses:
+  utter_start:
+    - text: "This is Stock Advisor Bot.\n
+            Please select one of the following options"
+      button_type: "vertical"
+      buttons:
+        - title: "1 Stock Information\n"
+          payload: "/option1"
+        - title: "2 Sentiment Analysis\n"
+          payload: "/option2"
+        - title: "3 Announcements\n"
+          payload: "/option3"
+        - title: "4 Portfolio Optimization Recommendation\n"
+          payload: "/option4"
+        - title: "5 Stock Price Forecasting\n"
+          payload: "/option5"
+        - title: "6 Reinforcement Learning for Trading Strategies\n"
+          payload: "/option6"
+
+  utter_ask_stocktick:
+    - text: "What stock do you want to know?\n
+            [Kindly Key in the ticket/stock name]\n
+            Eg. Seven Eleven/7-ELEVEN MALAYSIA HOLDINGS BERHAD"
+
+  utter_ask_username:
+    - text: "What is your username?"
+
+  utter_ask_password:
+    - text: "What is your password?"
+
+  utter_option1_tradingview:
+    - text: " This is trading view. Still in development"
+
+  utter_option1_fundamental:
+    - text: " This is fundamental. Still in development"
+
+  utter_option2:
+    - text: "Sentiment Analysis"
+      button_type: "vertical"
+      buttons:
+        - title: "1 Top 10 Sentiment-rated stocks in Wall Street"
+          payload: "/option2_1"
+        - title: "2 Back to Menu"
+          payload: "/start"
+
+  utter_option3:
+    - text: "Option 3 : Monitoring Announcement"
+      button_type: "vertical"
+      buttons:
+        - title: "1 Check Stock Monitoring List"
+          payload: "/option3_1"
+        - title: "2 Add New Stock"
+          payload: "/option3_2"
+        - title: "3 Delete Stock"
+          payload: "/option3_3"
+        - title: "4 Back to Menu"
+          payload: "/start"
+
+  utter_ask_newstock3:
+    - text: "What stock do you want add to the monitoring list?"
+
+  utter_ask_deletestock3:
+    - text: "What stock do you want remove from the monitoring list?"
+
+  utter_option4:
+    - text: "Option 4 : Portfolio Analysis"
+      button_type: "vertical"
+      buttons:
+        - title: "1 Correlation"
+          payload: "/option4_1"
+        - title: "2 Price Volatility"
+          payload: "/option4_2"
+        - title: "3 Portfolio Optimization and Asset Allocation"
+          payload: "/option4_3"
+        - title: "4 Back to Menu"
+          payload: "/start"
+
+  utter_ask_firststock:
+    - text: "What is the first stock?"
+
+  utter_ask_secondstock:
+    - text: "What is the second stock?"
+
+  utter_ask_correlationmonth:
+    - text: "How many month do you want to compare?\n[
+             minimun 1 month, maximum 12 months]\n[Only key in numeric number]"
+
+  utter_ask_vstock:
+    - text: "What is the stock do you want calculate for price volatility?"
+
+  utter_ask_vmonth:
+    - text: "How many month do you want to get the Price Volatility?\n
+            [minimun 1 month, maximum 12 months]\n[Only key in numeric number]"
+
+  utter_ask_stocklist:
+    - text: "What are the stocks that ypu intends to perform portfolio optimization?\n
+             Please type as following format : eg : adventa,711,asb"
+
+  utter_ask_portfolio_time:
+    - text: "How many months do you want to compute the Optimal Portfolio Optimization?"
+
+  utter_option5:
+    - text: "Option 5 : Stock Price Forecasting"
+      button_type: "vertical"
+      buttons:
+        - title: "1 ARIMA"
+          payload: "/option5_1"
+        - title: "2 Back to Menu"
+          payload: "/start"
+
+  utter_ask_stockoption5:
+    - text : "What stock do you want to forecast?"
+
+  utter_ask_arima_parameters:
+    - text : "Kindly define the following parameters ARIMA(p,D,q):\nP : autoregressive term\nD : number of non-seasonal differences\nq : moving average term\nKindly key in as the following format :eg ARIMA(1,1,0)"
+
+  utter_option6:
+    - text: "Option 6 : RL & GA for Trading Strategies\n
+             \n
+             RL & GA Algorithms requires high computing resources, when the algorithm is running, it might requires 20 minutes or more for the waiting time.\n
+             Kindly open the following url if you intend to run RL & GA for trading strategies\n
+             [www.google.com](https://www.google.com)"
+forms:
+  stockpick_form:
+    required_slots:
+      stocktick:
+        - type: from_text
+  authentication_form:
+    required_slots:
+      username:
+        - type: from_text
+      password:
+        - type: from_text
+  option3_add_form:
+    required_slots:
+      newstock3:
+        - type: from_text
+  option3_delete_form:
+    required_slots:
+      deletestock3:
+        - type: from_text
+  option4_correlation_form:
+    required_slots:
+      firststock:
+        - type: from_text
+      secondstock:
+        - type: from_text
+      correlationmonth:
+        - type: from_text
+  option4_price_volatility_form:
+    required_slots:
+      vstock:
+        - type: from_text
+      vmonth:
+        - type: from_text
+  option4_portfolio_form:
+    required_slots:
+      stocklist:
+        - type: from_text
+  option5_stock_form:
+    required_slots:
+      stockoption5:
+        - type: from_text
+      arima_parameters:
+        - type: from_text
+
+actions:
+  - option1_response
+  - option2_1_response
+  - option3_1_response
+  - option3_2_response
+  - option3_3_response
+  - option4_1_response
+  - option4_2_response
+  - option4_3_response
+  - option5_1_response
+  - validate_stockpick_form
+  - validate_authentication_form
+  - validate_option3_add_form
+  - validate_option3_delete_form
+  - validate_option4_correlation_form
+  - validate_option4_price_volatility_form
+  - validate_option4_portfolio_form
+  - validate_option5_stock_form
+
+session_config:
+  session_expiration_time: 60
+  carry_over_slots_to_new_session: false

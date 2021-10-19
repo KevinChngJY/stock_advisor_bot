@@ -1,0 +1,111 @@
+version: "2.0"
+
+stories:
+
+- story : start
+  steps:
+  - intent: start
+  - action: authentication_form
+  - active_loop: authentication_form
+  - intent: greet
+  - action: authentication_form
+  - active_loop: authentication_form
+  - checkpoint: start
+
+- story: option1_stocktick_filled
+  steps:
+  - checkpoint: start
+  - intent: option1
+  - action: stockpick_form
+  - active_loop: stockpick_form
+  - slot_was_set:
+    - stocktick: "anything"
+
+- story: option1_stocktick_empty
+  steps:
+  - checkpoint: start
+  - intent: option1
+  - action: stockpick_form
+  - active_loop: stockpick_form
+  - slot_was_set:
+    - stocktick: None
+  - action: stockpick_form
+  - active_loop: stockpick_form
+
+- story: option2
+  steps:
+  - checkpoint: start
+  - intent: option2
+  - action: utter_option2
+  - intent: option2_1
+  - action: option2_1_response
+
+- story: option3
+  steps:
+  - checkpoint: start
+  - intent: option3
+  - action: utter_option3
+  - checkpoint: option3
+
+- story: option3_1
+  steps:
+  - checkpoint: option3
+  - intent: option3_1
+  - action: option3_1_response
+
+- story: option3_2pi
+  steps:
+  - checkpoint: option3
+  - intent: option3_2
+  - action: option3_add_form
+  - active_loop: option3_add_form
+
+- story: option3_3
+  steps:
+  - checkpoint: option3
+  - intent: option3_3
+  - action: option3_delete_form
+  - active_loop: option3_delete_form
+
+- story: option4
+  steps:
+  - checkpoint: start
+  - intent: option4
+  - action: utter_option4
+  - checkpoint: option4
+
+- story: option4_1
+  steps:
+  - checkpoint: option4
+  - intent: option4_1
+  - action: option4_correlation_form
+  - active_loop: option4_correlation_form
+
+- story: option4_2
+  steps:
+  - checkpoint: option4
+  - intent: option4_2
+  - action: option4_price_volatility_form
+  - active_loop: option4_price_volatility_form
+
+- story: option4_3
+  steps:
+  - checkpoint: option4
+  - intent: option4_3
+  - action: option4_portfolio_form
+  - active_loop: option4_portfolio_form
+
+- story: option5
+  steps:
+  - checkpoint: start
+  - intent: option5
+  - action: utter_option5
+  - intent: option5_1
+  - action: option5_stock_form
+
+- story: option6
+  steps:
+  - checkpoint: start
+  - intent: option6
+  - action: utter_option6
+

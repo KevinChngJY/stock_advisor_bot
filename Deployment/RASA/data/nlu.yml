@@ -1,0 +1,80 @@
+version: "2.0"
+
+nlu:
+- intent: greet
+  examples: |
+    - hey
+    - hello
+    - hi
+    - hello there
+    - good morning
+    - good evening
+    - moin
+    - hey there
+    - let's go
+    - hey dude
+    - goodmorning
+    - goodevening
+    - good afternoon
+
+- intent: start
+  examples: |
+    - start
+    - begin
+
+- intent: option1
+  examples: |
+    - Stock Information
+    - Stock Price
+
+- intent: option2
+  examples: |
+    - Sentiment Analysis
+
+- intent: option2_1
+  examples: |
+    - top10_wallstreet
+
+- intent: option3
+  examples: |
+    - Annoucement
+
+- intent: option3_1
+  examples: |
+    - Check Monitoring Stock
+
+- intent: option3_2
+  examples: |
+    - Add Stock
+
+- intent: option3_3
+  examples: |
+    - Delete Stock
+
+- intent: option4
+  examples: |
+    - Portfolio Analysis
+
+- intent: option4_1
+  examples: |
+    - Correlation
+
+- intent: option4_2
+  examples: |
+    - Risk Level
+
+- intent: option4_3
+  examples: |
+    - Portfolio Optimization
+
+- intent: option5
+  examples: |
+    - Stock Price Forecasting
+
+- intent: option5_1
+  examples: |
+    - Arima
+
+- intent: option6
+  examples: |
+    - Reinforcement Learning for Trading Strategies

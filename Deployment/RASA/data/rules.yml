@@ -1,0 +1,152 @@
+version: "2.0"
+
+rules:
+
+- rule: Start
+  steps:
+  - intent: start
+  - action: authentication_form
+  - active_loop: authentication_form
+
+- rule: Greet
+  steps:
+  - intent: greet
+  - action: authentication_form
+  - active_loop: authentication_form
+
+- rule: submit form Greet
+  condition:
+  - active_loop: authentication_form
+  steps:
+  - action: authentication_form
+  - active_loop: null
+  - action: validate_authentication_form
+
+- rule: activate subscribe form
+  steps:
+  - intent: option1
+  - action: stockpick_form
+  - active_loop: stockpick_form
+
+- rule: submit form
+  condition:
+  - active_loop: stockpick_form
+  steps:
+  - action: stockpick_form
+  - active_loop: null
+  - action: option1_response
+
+- rule: option2
+  steps:
+  - intent: option2
+  - action: utter_option2
+
+- rule: option2_1
+  steps:
+  - intent: option2_1
+  - action: option2_1_response
+
+- rule: option3
+  steps:
+  - intent: option3
+  - action: utter_option3
+
+- rule: option3_1
+  steps:
+  - intent: option3_1
+  - action: option3_1_response
+
+- rule: option3_2
+  steps:
+  - intent: option3_2
+  - action: option3_add_form
+  - active_loop: option3_add_form
+
+- rule: submit form option3_2
+  condition:
+  - active_loop: option3_add_form
+  steps:
+  - action: option3_add_form
+  - active_loop: null
+  - action: option3_2_response
+
+- rule: option3_3
+  steps:
+  - intent: option3_3
+  - action: option3_delete_form
+  - active_loop: option3_delete_form
+
+- rule: submit form option3_3
+  condition:
+  - active_loop: option3_delete_form
+  steps:
+  - action: option3_delete_form
+  - active_loop: null
+  - action: option3_3_response
+
+- rule: option4
+  steps:
+  - intent: option4
+  - action: utter_option4
+
+- rule: option4_1
+  steps:
+  - intent: option4_1
+  - action: option4_correlation_form
+  - active_loop: option4_correlation_form
+
+- rule: submit form option4_1
+  condition:
+  - active_loop: option4_correlation_form
+  steps:
+  - action: option4_correlation_form
+  - active_loop: null
+  - action: option4_1_response
+
+- rule: option4_2
+  steps:
+  - intent: option4_2
+  - action: option4_price_volatility_form
+  - active_loop: option4_price_volatility_form
+
+- rule: submit form option4_2
+  condition:
+  - active_loop: option4_price_volatility_form
+  steps:
+  - action: option4_price_volatility_form
+  - active_loop: null
+  - action: option4_2_response
+
+- rule: option4_3
+  steps:
+  - intent: option4_3
+  - action: option4_portfolio_form
+  - active_loop: option4_portfolio_form
+
+- rule: submit form option4_3
+  condition:
+  - active_loop: option4_portfolio_form
+  steps:
+  - action: option4_portfolio_form
+  - active_loop: null
+  - action: option4_3_response
+
+- rule: option5
+  steps:
+  - intent: option5
+  - action: utter_option5
+
+
+- rule: option5_1
+  steps:
+  - intent: option5_1
+  - action: option5_stock_form
+  - active_loop: option5_stock_form
+
+- rule: submit form option5_1
+  condition:
+  - active_loop: option5_stock_form
+  steps:
+  - action: option5_stock_form
+  - active_loop: null
+  - action: option5_1_response

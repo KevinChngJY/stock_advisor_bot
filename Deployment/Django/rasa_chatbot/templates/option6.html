@@ -1,0 +1,18 @@
+{% load static %}
+<head>
+<link rel="stylesheet" type="text/css" href="{% static 'style.css' %}">
+</head>
+<div class="login">
+	<h1>Compute RL/GA</h1>
+    <h2>Input:</h2>
+    {% if explain %}
+    <h3>{{ explain }}</h3>
+    {% endif %}
+    <form method="post">
+    {% csrf_token %}
+    	<input type="text" name="s" placeholder="Stock Tick Name" required="required" />
+        <input type="text" name="w" placeholder="Window Size" required="required" />
+        <input type="text" name="e" placeholder="Episode Count" required="required" />
+        <button type="submit" class="btn btn-primary btn-block btn-large" name="Compute">Start Compute</button>
+    </form>
+</div>

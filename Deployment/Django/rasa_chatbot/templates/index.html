@@ -1,0 +1,17 @@
+{% load static %}
+<head>
+<link rel="stylesheet" type="text/css" href="{% static 'style.css' %}">
+</head>
+<div class="login">
+	<h1>Login</h1>
+    <h2>ISA Finance Bot - RL/GA</h2>
+    {% if explain %}
+    <h3>{{ explain }}</h3>
+    {% endif %}
+    <form method="post">
+    {% csrf_token %}
+    	<input type="text" name="u" placeholder="Username" required="required" />
+        <input type="password" name="p" placeholder="Password" required="required" />
+        <button type="submit" class="btn btn-primary btn-block btn-large" name="Login">Let me in.</button>
+    </form>
+</div>
