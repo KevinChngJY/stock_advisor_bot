@@ -359,7 +359,14 @@ bursalist :
 ### Milestone 3.4 RASA + Django + Celery + Database
 
 ---
-## SECTION 7 : Deployment
+## SECTION 7 : Run the system in your local machine
+
+Step 1 : Clone this repository to your system
+Step 2 : Install packages for rasa environment
+
+'''
+conda create -n rasa_server
+'''
 
 
 # self-recording
