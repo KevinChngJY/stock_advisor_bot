@@ -361,13 +361,77 @@ bursalist :
 ---
 ## SECTION 7 : Run the system in your local machine
 
-Step 1 : Clone this repository to your system
-Step 2 : Install packages for rasa environment
+### Install Pre-requisites
 
-'''
-conda create -n rasa_server
-'''
+**Step 1 : Install NGROK in your machine**
+https://ngrok.com/
 
+**Step 2 : Install Anaconda**
+https://www.anaconda.com/products/individual
+
+**Step 3 : Clone this repository to your system**
+
+**Step 4 : Install packages for rasa open source server environment**
+
+Open Anaconda Prompt to set up the environmet for rasa open source server
+
+```
+conda create -n rasa_server python=3.6
+conda activate rasa_server
+```
+
+```
+pip3 install -U --user pip
+```
+
+```
+pip3 install rasa[full]
+```
+
+**Step 4 : Install packages for rasa action server environment**
+
+In your anaconda prompt, kindly run the following command to set up the environment for rasa action server
+
+```
+conda create -n rasa_server_action python=3.6
+conda activate rasa_server_action
+```
+
+```
+pip3 install -U --user pip
+pip3 install rasa[full]
+```
+
+```
+pip install yahoofinancials
+pip install pandas-datareader
+pip install yfinance
+conda install -c anaconda sqlite
+conda install -c trentonoliphant datetime
+conda install -c conda-forge ta-lib=0.4.19
+conda install numpy
+conda install pandas
+conda install -c anaconda statsmodels
+conda install -c anaconda scikit-learn
+conda install -c anaconda nltk
+conda install -c conda-forge praw
+conda install -c conda-forge squarify
+conda install -c conda-forge ta
+```
+
+**Step 5 : Install packages for Django environment**
+
+In your anaconda prompt, kindly run the following command to set up the environment for Django environment
+
+
+### Run servers
+
+
+### Demo
+
+
+
+conda 
 
 # self-recording
 start ngrok
