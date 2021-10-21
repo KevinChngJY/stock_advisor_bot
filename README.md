@@ -371,7 +371,12 @@ https://www.anaconda.com/products/individual
 
 **Step 3 : Clone this repository to your system**
 
-**Step 4 : Install packages for rasa open source server environment**
+**Step 4 : Complete Milestone 1.2 - Setup Telegram FatherBot and webhook to RASA Open Source Server
+https://github.com/KevinChngJY/stock_advisor_bot/blob/main/Section5_RASA_NGROK_Telegram.md
+
+Ensure you can get the same result. 
+
+**Step 5 : Install packages for rasa open source server environment**
 
 Open Anaconda Prompt to set up the environmet for rasa open source server
 
@@ -388,7 +393,7 @@ pip3 install -U --user pip
 pip3 install rasa[full]
 ```
 
-**Step 4 : Install packages for rasa action server environment**
+**Step 6 : Install packages for rasa action server environment**
 
 In your anaconda prompt, kindly run the following command to set up the environment for rasa action server
 
@@ -419,7 +424,7 @@ conda install -c anaconda scikit-learn
 conda install -c anaconda nltk
 ```
 
-**Step 5 : Install packages for Django environment**
+**Step 7 : Install packages for Django environment**
 
 In your anaconda prompt, kindly run the following command to set up the environment for Django environment
 
@@ -428,7 +433,22 @@ conda create -n django_server python=3.6
 conda activate django_server
 ```
 
+```
 conda install -c anaconda django
+pip install celery
+pip install redis
+```
+
+Install Redis & start it up locally at port 6379:
+https://redis.io/topics/quickstart
+
+```
+conda install -c conda-forge djangorestframework
+conda install -c anaconda requests
+conda install -c conda-forge keras
+conda install -c conda-forge tensorflow
+```
+
 
 ### Run servers
 
