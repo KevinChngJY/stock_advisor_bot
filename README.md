@@ -406,6 +406,9 @@ pip3 install rasa[full]
 pip install yahoofinancials
 pip install pandas-datareader
 pip install yfinance
+pip install ta
+pip install praw
+pip install squarify
 conda install -c anaconda sqlite
 conda install -c trentonoliphant datetime
 conda install -c conda-forge ta-lib=0.4.19
@@ -414,15 +417,18 @@ conda install pandas
 conda install -c anaconda statsmodels
 conda install -c anaconda scikit-learn
 conda install -c anaconda nltk
-conda install -c conda-forge praw
-conda install -c conda-forge squarify
-conda install -c conda-forge ta
 ```
 
 **Step 5 : Install packages for Django environment**
 
 In your anaconda prompt, kindly run the following command to set up the environment for Django environment
 
+```
+conda create -n django_server python=3.6
+conda activate django_server
+```
+
+conda install -c anaconda django
 
 ### Run servers
 
