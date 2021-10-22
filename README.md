@@ -429,7 +429,7 @@ conda install -c anaconda nltk
 In your anaconda prompt, kindly run the following command to set up the environment for Django environment
 
 ```
-conda create -n django_server python=3.6
+conda create -n django_server python=3.8
 conda activate django_server
 ```
 
@@ -447,6 +447,13 @@ conda install -c conda-forge djangorestframework
 conda install -c anaconda requests
 conda install -c conda-forge keras
 conda install -c conda-forge tensorflow
+```
+
+you might have error in installing tensorflow in anaconda, it is pretty common, i believe you could found the solution online.
+
+```
+pip install python-dateutil
+pip install pandas-datareader
 ```
 
 
