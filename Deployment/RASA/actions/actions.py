@@ -48,7 +48,7 @@ class Option11_Price(Action):
 
          #Get company name 
          slot_value = tracker.get_slot('stocktick')
-         con = sqlite3.connect("/Users/user/Desktop/chatbot/db.sqlite3")
+         con = sqlite3.connect("../../Django/db.sqlite3")
          cursor = con.execute("SELECT company_official from rasa_chatbot_bursalist WHERE company_tickname='{}'".format(slot_value))
          row = cursor.fetchone()
          msg = "Today: {}\n\n{} :\n\n**Price-MYR**\n".format(str(d1),row[0])
@@ -222,7 +222,7 @@ class Option2_1(Action):
             #check_customer_watch_list
             msg = "Sentiment Analysis\n\nToday is : {}\n\n".format(d1)
             # Connect to database
-            con = sqlite3.connect("/Usedrs/user/Desktop/chatbot/db.sqlite3")
+            con = sqlite3.connect("../../Django/db.sqlite3")
             cursor = con.execute("SELECT top10 from rasa_chatbot_sentimentanalysistop10 WHERE categories='sentime_result_top_10_mentioned'")
             row1 = cursor.fetchone()
             cursor = con.execute("SELECT top10 from rasa_chatbot_sentimentanalysistop10 WHERE categories='Most_Mentioned'")
@@ -269,7 +269,7 @@ class Option3_1(Action):
             return []
          else:
             #check_customer_watch_list
-            con = sqlite3.connect("/Users/user/Desktop/chatbot/db.sqlite3")
+            con = sqlite3.connect("../../Django/db.sqlite3")
             username = tracker.get_slot("username")
             cursor = con.execute("SELECT company_official from rasa_chatbot_option3_stock_monitoring WHERE username='{}'".format(username))
             row = cursor.fetchall()
@@ -296,7 +296,7 @@ class Option3_2(Action):
 
          slot_value = tracker.get_slot('newstock3')
          slot_value1 = tracker.get_slot('username')
-         con = sqlite3.connect("/Users/user/Desktop/chatbot/db.sqlite3")
+         con = sqlite3.connect("../../Django/db.sqlite3")
          cursor = con.execute("SELECT company_tickname from rasa_chatbot_bursalist WHERE company_official='{}'".format(slot_value.upper()))
          row = cursor.fetchone()
          con.close()        
@@ -321,7 +321,7 @@ class Option3_3(Action):
 
          slot_value = tracker.get_slot('deletestock3')
          slot_value1 = tracker.get_slot('username')
-         con = sqlite3.connect("/Users/user/Desktop/chatbot/db.sqlite3")
+         con = sqlite3.connect("../../Django/db.sqlite3")
          cursor = con.execute("SELECT company_tickname from rasa_chatbot_bursalist WHERE company_official='{}'".format(slot_value.upper()))
          row = cursor.fetchone()
          con.close()        
@@ -361,7 +361,7 @@ class Option4_1(Action):
          test = test['Adj Close']
          corr = (test[stock1].corr(test[stock2]))*100
 
-         con = sqlite3.connect("/Users/user/Desktop/chatbot/db.sqlite3")
+         con = sqlite3.connect("../../Django/db.sqlite3")
          cursor = con.execute("SELECT company_official from rasa_chatbot_bursalist WHERE company_tickname='{}'".format(slot_value))
          row1 = cursor.fetchone()
          cursor = con.execute("SELECT company_official from rasa_chatbot_bursalist WHERE company_tickname='{}'".format(slot_value1))
@@ -398,7 +398,7 @@ class Option4_2(Action):
          volatility = (test['Log return'].std()*252**.5)*100
          print(volatility)
 
-         con = sqlite3.connect("/Users/user/Desktop/chatbot/db.sqlite3")
+         con = sqlite3.connect("../../Django/db.sqlite3")
          cursor = con.execute("SELECT company_official from rasa_chatbot_bursalist WHERE company_tickname='{}'".format(slot_value))
          row1 = cursor.fetchone()
          con.close()  
@@ -421,7 +421,7 @@ class Option4_3(Action):
 
          slot_value = tracker.get_slot('stocklist')
          slot_value = slot_value.split(',')
-         con = sqlite3.connect("/Users/user/Desktop/chatbot/db.sqlite3")
+         con = sqlite3.connect("../../Django/db.sqlite3")
          ticklist=[]
          for stock in slot_value:
             cursor = con.execute("SELECT company_tickname from rasa_chatbot_bursalist WHERE company='{}'".format(stock.lower()))
@@ -516,7 +516,7 @@ class Option5_1(Action):
             MSE_error = mean_squared_error(test_data, model_predictions)
 
             ### do it in future as it need database
-            con = sqlite3.connect("/Users/user/Desktop/chatbot/db.sqlite3")
+            con = sqlite3.connect("../../Django/db.sqlite3")
             cursor = con.execute("SELECT company_official from rasa_chatbot_bursalist WHERE company_tickname='{}'".format(slot_value))
             row = cursor.fetchone()
             con.close()        
@@ -572,7 +572,7 @@ class StockPickForm(FormValidationAction):
             dispatcher.utter_message(text="Hi, your session might be expired. Kindly key in your username and password again.",buttons=buttons,button_type=button_type)
             return {"stocktick": None}
          else:
-            con = sqlite3.connect("/Users/user/Desktop/chatbot/db.sqlite3")
+            con = sqlite3.connect("../../Django/db.sqlite3")
             cursor = con.execute("SELECT company_tickname from rasa_chatbot_bursalist WHERE company='{}'".format(slot_value.lower()))
             row = cursor.fetchone()
             con.close()        
@@ -596,7 +596,7 @@ class AuthenticationForm(FormValidationAction):
              domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
 
          #if the name is not valid stock tick
-         con = sqlite3.connect("/Users/user/Desktop/chatbot/db.sqlite3")
+         con = sqlite3.connect("../../Django/db.sqlite3")
          cursor = con.execute("SELECT username from rasa_chatbot_userdatabase WHERE username='{}'".format(slot_value))
          row = cursor.fetchone()
          con.close()
@@ -614,7 +614,7 @@ class AuthenticationForm(FormValidationAction):
              domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
 
          #if the name is not valid stock tick
-         con = sqlite3.connect("/Users/user/Desktop/chatbot/db.sqlite3")
+         con = sqlite3.connect("../../Django/db.sqlite3")
          cursor = con.execute("SELECT password from rasa_chatbot_userdatabase WHERE username='{}'".format(slot_value))
          row = cursor.fetchone()
          con.close()
@@ -660,7 +660,7 @@ class Option3_add(FormValidationAction):
             # check the stock name lookup
             username = tracker.get_slot("username")
             ### do it in future as it need database
-            con = sqlite3.connect("/Users/user/Desktop/chatbot/db.sqlite3")
+            con = sqlite3.connect("../../Django/db.sqlite3")
             cursor = con.execute("SELECT company_official from rasa_chatbot_bursalist WHERE company='{}'".format(slot_value.lower()))
             row = cursor.fetchone()
             if row==None:
@@ -709,7 +709,7 @@ class Option3_delete(FormValidationAction):
          else:
             username = tracker.get_slot("username")
             ### do it in future as it need database
-            con = sqlite3.connect("/Users/user/Desktop/chatbot/db.sqlite3")
+            con = sqlite3.connect("/../../Django/db.sqlite3")
             cursor = con.execute("SELECT company_official from rasa_chatbot_bursalist WHERE company='{}'".format(slot_value.lower()))
             row = cursor.fetchone()
             if row==None:
@@ -749,7 +749,7 @@ class Option4_correlation(FormValidationAction):
          else:
             # check the stock name lookup
             ### do it in future as it need database
-            con = sqlite3.connect("/Users/user/Desktop/chatbot/db.sqlite3")
+            con = sqlite3.connect("../../Django/db.sqlite3")
             cursor = con.execute("SELECT company_tickname from rasa_chatbot_bursalist WHERE company='{}'".format(slot_value.lower()))
             row = cursor.fetchone()
             con.close()        
@@ -769,7 +769,7 @@ class Option4_correlation(FormValidationAction):
          
          # check the stock name lookup
          ### do it in future as it need database
-         con = sqlite3.connect("/Users/user/Desktop/chatbot/db.sqlite3")
+         con = sqlite3.connect("../../Django/db.sqlite3")
          cursor = con.execute("SELECT company_tickname from rasa_chatbot_bursalist WHERE company='{}'".format(slot_value.lower()))
          row = cursor.fetchone()
          con.close()        
@@ -823,7 +823,7 @@ class Option4_price_volatility(FormValidationAction):
          else:
             # check the stock name lookup
             ### do it in future as it need database
-            con = sqlite3.connect("/Users/user/Desktop/chatbot/db.sqlite3")
+            con = sqlite3.connect("../../Django/db.sqlite3")
             cursor = con.execute("SELECT company_tickname from rasa_chatbot_bursalist WHERE company='{}'".format(slot_value.lower()))
             row = cursor.fetchone()
             con.close()        
@@ -880,7 +880,7 @@ class Option4_portfolio(FormValidationAction):
             stocklist=slot_value.split(',')
 
             # connect to datbase
-            con = sqlite3.connect("/Users/user/Desktop/chatbot/db.sqlite3")
+            con = sqlite3.connect("../../Django/db.sqlite3")
 
             if len(stocklist)<10: 
                 for stock in stocklist:
@@ -919,7 +919,7 @@ class Option5_stock(FormValidationAction):
          else:
             # check the stock name lookup
             ### do it in future as it need database
-            con = sqlite3.connect("/Users/user/Desktop/chatbot/db.sqlite3")
+            con = sqlite3.connect("../../Django/db.sqlite3")
             cursor = con.execute("SELECT company_tickname from rasa_chatbot_bursalist WHERE company='{}'".format(slot_value.lower()))
             row = cursor.fetchone()
             con.close()        
