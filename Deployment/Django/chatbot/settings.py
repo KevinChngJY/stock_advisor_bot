@@ -10,6 +10,7 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/3.1/ref/settings/
 """
 
+from celery.schedules import crontab
 from pathlib import Path
 import os
 
@@ -30,10 +31,10 @@ ALLOWED_HOSTS = []
 
 
 # Application definition
+# django_celery_beat
 
 INSTALLED_APPS = [
     'rasa_chatbot',
-    'django_celery_beat', 
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -124,29 +125,28 @@ USE_TZ = True
 STATIC_URL = '/static/'
 
 # Celery
-from celery.schedules import crontab   
 CELERY_BROKER_URL = 'redis://localhost:6379'
-# If time zones are active (USE_TZ = True) define your local 
+# If time zones are active (USE_TZ = True) define your local
 CELERY_TIMEZONE = 'Asia/Singapore'
-#app.conf.enable_utc = False # so celery doesn't take utc by default
-# We're going to have our tasks rolling soon, so that will be handy 
+# app.conf.enable_utc = False # so celery doesn't take utc by default
+# We're going to have our tasks rolling soon, so that will be handy
 CELERY_BEAT_SCHEDULE = {}
 
-# Let's make things happen 
+# Let's make things happen
 CELERY_BEAT_SCHEDULE = {
- 'update-sentiment=every-midnight': {
-       'task': 'sentiment',
-        # There are 4 ways we can handle time, read further 
-       'schedule': crontab(minute=0,hour=0) #Execute daily at midnight
-       #'schedule': 360 #Execute daily at midnight
+    'update-sentiment=every-midnight': {
+        'task': 'sentiment',
+        # There are 4 ways we can handle time, read further
+        'schedule': crontab(minute=0, hour=0)  # Execute daily at midnight
+        # 'schedule': 360 #Execute daily at midnight
         # If you're using any arguments
-       # 'args': ("We dont need any",),
+        # 'args': ("We dont need any",),
     },
     # Executes every Friday at 4pm
-    'send-notification-on-announcement': { 
-         #'task': 'rasa_chatbot.tasks.send_notification',
-         'task': 'announcement',
-         #'schedule' : 100,
-         'schedule': crontab(minute=0,hour='14,20', day_of_week='mon,tue,wed,thu,fri'),
-        },          
+    'send-notification-on-announcement': {
+        # 'task': 'rasa_chatbot.tasks.send_notification',
+        'task': 'announcement',
+        # 'schedule' : 100,
+        'schedule': crontab(minute=0, hour='14,20', day_of_week='mon,tue,wed,thu,fri'),
+    },
 }

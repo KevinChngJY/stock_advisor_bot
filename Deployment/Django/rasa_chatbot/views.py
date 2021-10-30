@@ -1,13 +1,14 @@
 from django.shortcuts import render, redirect
 from django.http import HttpResponse
+from keras.backend import prod
 from rest_framework.response import Response
 from django.template import loader
 from rest_framework import status
 import requests
 from django.views.decorators.csrf import csrf_exempt
-from .models import option3_stock_monitoring,sentimentanalysistop10,userdatabase,bursalist
+from .models import option3_stock_monitoring, sentimentanalysistop10, userdatabase, bursalist
 
-#Import for RL
+# Import for RL
 import keras
 from keras.models import Sequential
 from keras.models import load_model
@@ -22,128 +23,186 @@ from datetime import date
 from dateutil.relativedelta import relativedelta
 from pandas_datareader import data
 
+# Import for GA
+import tagenalgo as tg
+from tagenalgo import TAGenAlgo
+from sklearn.model_selection import train_test_split
+
 # Create your views here.
+
+
 @csrf_exempt
 def option3_add(request):
-	stock = request.GET['stock']
-	username = request.GET['username']
-	tick = request.GET['tick']
-	q = option3_stock_monitoring(username=username,company_official=stock,company_tickname=tick,exchange="bursa")
-	q.save()
-	return Response({"UPDATE":"SUCCESS"}, status=status.HTTP_200_OK)
+    stock = request.GET['stock']
+    username = request.GET['username']
+    tick = request.GET['tick']
+    q = option3_stock_monitoring(
+        username=username, company_official=stock, company_tickname=tick, exchange="bursa")
+    q.save()
+    return Response({"UPDATE": "SUCCESS"}, status=status.HTTP_200_OK)
 
 
 @csrf_exempt
 def option3_delete(request):
-	stock = request.GET['stock']
-	username = request.GET['username']
-	tick = request.GET['tick']
-	print(username)
-	print(stock)
-	option3_stock_monitoring.objects.get(username=username,company_official=stock).delete()
-	return Response({"UPDATE":"SUCCESS"}, status=status.HTTP_200_OK)
+    stock = request.GET['stock']
+    username = request.GET['username']
+    tick = request.GET['tick']
+    print(username)
+    print(stock)
+    option3_stock_monitoring.objects.get(
+        username=username, company_official=stock).delete()
+    return Response({"UPDATE": "SUCCESS"}, status=status.HTTP_200_OK)
+
 
 def option6_login(request):
-	if request.method == 'POST' and "Login" in request.POST:
-		username = request.POST.get('u')
-		password = request.POST.get('p')
-		userdatabase.objects.get(username=str(username))
-		userdatabase.objects.get(password=str(password))
-		try:
-			username = request.POST.get('u')
-			password = request.POST.get('p')
-			userdatabase.objects.get(username=str(username))
-			userdatabase.objects.get(password=str(password))
-			return HttpResponse(render(request,"option6.html"))
-		except:
-			template = loader.get_template('index.html')
-			explain = "Invalid Username/Password"
-			context = {'explain':explain}
-			return HttpResponse(template.render(context,request))
-	if request.method == 'POST' and "Compute" in request.POST:
-		try:
-			stock_tick_name = request.POST.get('s')
-			stock=bursalist.objects.get(company=str(stock_tick_name))
-		except:
-			template = loader.get_template('option6.html')
-			explain = "Invalid Stock Tick Name"
-			context = {'explain':explain}
-			return HttpResponse(template.render(context,request))
-		
-		window_size = request.POST.get('w')
-		episode_count = request.POST.get('e')
-		if window_size.isdigit()==False or episode_count.isdigit()==False:
-			template = loader.get_template('option6.html')
-			explain = "Window Size & Episode must be digit!"
-			context = {'explain':explain}
-			return HttpResponse(template.render(context,request))
+    # Check for Username and Password
+    if request.method == 'POST' and "Login" in request.POST:
+        username = request.POST.get('u')
+        password = request.POST.get('p')
+        try:
+            username = request.POST.get('u')
+            password = request.POST.get('p')
+            userdatabase.objects.get(username=str(username))
+            userdatabase.objects.get(password=str(password))
+            return HttpResponse(render(request, "option6.html"))
+        except:
+            template = loader.get_template('index.html')
+            explain = "Invalid Username/Password"
+            context = {'explain': explain}
+            return HttpResponse(template.render(context, request))
+    if request.method == 'POST' and "Compute" in request.POST:
 
-		# Train Agent for RL
-		stock_tick = stock.company_tickname
-		data_stock = getStockDataVec(stock_tick)
-		window_size = int(window_size)
-		episode_count = int(episode_count)
-		agent = Agent(window_size)
-		l = len(data_stock)-1
-		print(l)
-		batch_size = 32
-		for e in range(episode_count + 1):
-			print("Episode" + str(e) + "/" + str(episode_count))
-			state = getState(data_stock,0,window_size+1)
-			total_profit = 0
-			agent.inventory = []
-			for t in range(l):
-				action = agent.act(state)
-				next_state = getState(data_stock,t+1,window_size+1)
-				reward = 0
-				if action == 1:
-					agent.inventory.append(data_stock[t])
-					print("Buy: " + formatPrice(data_stock[t]))
-				elif action ==2 and len(agent.inventory)>0:
-					bought_price = agent.inventory.pop(0)
-					reward = max(data_stock[t] - bought_price, 0)
-					total_profit += data_stock[t] - bought_price
-					print("Sell: " + formatPrice(data_stock[t]) + " | Profit: " + formatPrice(data_stock[t] - bought_price))
-				done = True if t==1 else False
-				agent.memory.append((state, action, reward, next_state, done))
-				state = next_state
-				if done:
-					print("--------------------------------")
-					print("Total Profit: " + formatPrice(total_profit))
-					print("--------------------------------")
-				if len(agent.memory) > batch_size:
-					agent.expReplay(batch_size)
+        # Check for stock tick name
+        try:
+            stock_tick_name = request.POST.get('s')
+            stock = bursalist.objects.get(company=str(stock_tick_name))
+        except:
+            template = loader.get_template('option6.html')
+            explain = "Invalid Stock Tick Name"
+            context = {'explain': explain}
+            return HttpResponse(template.render(context, request))
 
-		# RL Evaluation
-		state = getState(data_stock,0,window_size+1)
-		total_profit = 0
-		agent.inventory = []
-		for t in range(l):
-			action = agent.act(state)
-			print(action)
-			# sit
-			next_state = getState(data, t + 1, window_size + 1)
-			reward = 0
-			if action == 1: # buy
-				agent.inventory.append(data[t])
-				print("Buy: " + formatPrice(data[t]))
-			elif action == 2 and len(agent.inventory) > 0: # sell
-				bought_price = agent.inventory.pop(0)
-				reward = max(data[t] - bought_price, 0)
-				total_profit += data[t] - bought_price
-				print("Sell: " + formatPrice(data[t]) + " | Profit: " + formatPrice(data[t] - bought_price))
-			done = True if t == l - 1 else False
-			agent.memory.append((state, action, reward, next_state, done))
-			state = next_state
+        # Check for key_in for window size and episode count (Must be digit)
+        window_size = request.POST.get('w')
+        episode_count = request.POST.get('e')
+        if window_size.isdigit() == False or episode_count.isdigit() == False:
+            template = loader.get_template('option6.html')
+            explain = "Window Size & Episode must be digit!"
+            context = {'explain': explain}
+            return HttpResponse(template.render(context, request))
 
-		# GA Optimization
-	return HttpResponse(render(request,"index.html"))
+        # Check for window_size
+        if int(window_size) < 5 or int(window_size) > 20:
+            template = loader.get_template('option6.html')
+            explain = "Window Size must be between 5 and 20"
+            context = {'explain': explain}
+            return HttpResponse(template.render(context, request))
+
+        # Check for episode count
+        if int(episode_count) < 1 or int(episode_count) > 5:
+            template = loader.get_template('option6.html')
+            explain = "System is running in personal home laptop, so maximum epsiode is 5"
+            context = {'explain': explain}
+            return HttpResponse(template.render(context, request))
+
+        # Train Agent for RL
+        stock_tick = stock.company_tickname
+        data_stock, date_data = getStockDataVec(stock_tick)
+        window_size = int(window_size)
+        episode_count = int(episode_count)
+        agent = Agent(window_size)
+        l = len(data_stock)-1
+        # # print(l)
+        batch_size = 32
+        for e in range(episode_count + 1):
+            print("Episode" + str(e) + "/" + str(episode_count))
+            state = getState(data_stock, 0, window_size+1)
+            total_profit = 0
+            agent.inventory = []
+            for t in range(l):
+                print(date_data[t])
+                action = agent.act(state)
+                next_state = getState(data_stock, t+1, window_size+1)
+                reward = 0
+                if action == 1:
+                    agent.inventory.append(data_stock[t])
+                    print("Buy: " + formatPrice(data_stock[t]))
+                elif action == 2 and len(agent.inventory) > 0:
+                    bought_price = agent.inventory.pop(0)
+                    reward = max(data_stock[t] - bought_price, 0)
+                    total_profit += data_stock[t] - bought_price
+                    print("Sell: " + formatPrice(data_stock[t]) + " | Profit: " + formatPrice(
+                        data_stock[t] - bought_price))
+                done = True if t == l-1 else False
+                agent.memory.append((state, action, reward, next_state, done))
+                state = next_state
+                if done:
+                    print("--------------------------------")
+                    print("Total Profit: " + formatPrice(total_profit))
+                    print("--------------------------------")
+                if len(agent.memory) > batch_size:
+                    agent.expReplay(batch_size)
+
+        # # RL Evaluation
+        state = getState(data_stock, 0, window_size+1)
+        total_profit = 0
+        agent.inventory = []
+        action_show_RL = []
+        cummulated_show_profit = []
+        for t in range(l):
+            print(date_data[t])
+            action = agent.act(state)
+            # sit
+            next_state = getState(data_stock, t + 1, window_size + 1)
+            reward = 0
+            if action == 1:  # buy
+                agent.inventory.append(data_stock[t])
+                print("Buy: " + formatPrice(data_stock[t]))
+                action_show_RL.append("Buy")
+            elif action == 2 and len(agent.inventory) > 0:  # sell
+                bought_price = agent.inventory.pop(0)
+                reward = max(data_stock[t] - bought_price, 0)
+                total_profit += data_stock[t] - bought_price
+                print(reward)
+                print(total_profit)
+                action_show_RL.append("Sell")
+                print(
+                    "Sell: " + formatPrice(data_stock[t]) + " | Profit: " + formatPrice(data_stock[t] - bought_price))
+            else:
+                action_show_RL.append("Hold")
+            done = True if t == l - 1 else False
+            if done:
+                print("--------------------------------")
+                print("Total Profit: " + formatPrice(total_profit))
+                print("--------------------------------")
+            agent.memory.append((state, action, reward, next_state, done))
+            state = next_state
+            cummulated_show_profit.append(total_profit)
+
+        # GA Optimization
+        #X_train, X_test = train_test_split(data_stock,shuffle=False)
+        #model = TAGenAlgo(price=X_train, generations=3, population_size=100, crossover_prob=0.9, mutation_prob=0, method='single', strategy='rsi')
+        # _, init_pop = model.ta_initialize(indicator_set={'rsi': {'window': [5, 180], 'down_thres': [5, 50], 'up_thres': [51, 90]}}
+
+        data_stock = ["{0:.3f}".format(x)for x in data_stock]
+        cummulated_show_profit = ["{0:.3f}".format(
+            x)for x in cummulated_show_profit]
+        table_value = zip(date_data, data_stock,
+                          action_show_RL, cummulated_show_profit)
+        official_name = stock.company_official
+        context = {'table_value': table_value, 'official_name': official_name}
+        template = loader.get_template('option6_compute.html')
+        return HttpResponse(template.render(context, request))
+
+    return HttpResponse(render(request, "index.html"))
 
 # Agent
+
+
 class Agent:
-    def __init__(self,state_size,is_eval=False,model_name=""):
-        self.state_size = state_size # normalized previous day
-        self.action_size = 3 # sit,buy, sell
+    def __init__(self, state_size, is_eval=False, model_name=""):
+        self.state_size = state_size  # normalized previous day
+        self.action_size = 3  # sit,buy, sell
         self.memory = deque(maxlen=1000)
         self.inventory = []
         self.model_name = model_name
@@ -153,6 +212,7 @@ class Agent:
         self.epsilon_decay = 0.995
         self.epsilon_min = 0.01
         self.model = load_model(model_name) if is_eval else self._model()
+
     def _model(self):
         model = Sequential()
         model.add(Dense(units=64, input_dim=self.state_size, activation="relu"))
@@ -161,11 +221,13 @@ class Agent:
         model.add(Dense(self.action_size, activation="linear"))
         model.compile(loss="mse", optimizer=Adam(lr=0.001))
         return model
+
     def act(self, state):
-        if not self.is_eval and random.random()<= self.epsilon:
+        if not self.is_eval and random.random() <= self.epsilon:
             return random.randrange(self.action_size)
         options = self.model.predict(state)
         return np.argmax(options[0])
+
     def expReplay(self, batch_size):
         mini_batch = []
         l = len(self.memory)
@@ -174,7 +236,8 @@ class Agent:
         for state, action, reward, next_state, done in mini_batch:
             target = reward
             if not done:
-                target = reward + self.gamma * np.amax(self.model.predict(next_state)[0])
+                target = reward + self.gamma * \
+                    np.amax(self.model.predict(next_state)[0])
             target_f = self.model.predict(state)
             target_f[0][action] = target
             self.model.fit(state, target_f, epochs=1, verbose=0)
@@ -182,29 +245,40 @@ class Agent:
             self.epsilon *= self.epsilon_decay
 
 # Basic Function
+
+
 def formatPrice(n):
-    return("-Rs." if n<0 else "Rs.")+"{0:.2f}".format(abs(n))
+    return("-Rs." if n < 0 else "Rs.")+"{0:.2f}".format(abs(n))
+
+
 def getStockDataVec(key):
-	stock1 = "{}.KL".format(key)
-	#Get today date
-	today = date.today()
-	# YYYY-MM-DD
-	d1 = today.strftime("%Y/%m/%d")
-	startdate =  date.today() + relativedelta(months=-int(12))
-	test = data.DataReader(stock1,'yahoo',start=startdate,end=d1)
-	vec = list(test['Close'])
-	return vec 
+    stock1 = "{}.KL".format(key)
+    # Get today date
+    today = date.today()
+    # YYYY-MM-DD
+    d1 = today.strftime("%Y/%m/%d")
+    startdate = date.today() + relativedelta(months=-int(1))
+    test = data.DataReader(stock1, 'yahoo', start=startdate, end=d1)
+    vec = list(test['Close'])
+    vec = [float("{0:.3f}".format(x)) for x in vec]
+    date_data = list(test.index)
+    date_data = [d.strftime('%y-%m-%d') for d in date_data]
+    return vec, date_data
+
+
 def sigmoid(x):
     return 1/(1+math.exp(-x))
+
+
 def getState(data, t, n):
     d = t - n + 1
-    block = data[d:t + 1] if d >= 0 else -d * [data[0]] + data[0:t + 1] # pad with t0
+    block = data[d:t + 1] if d >= 0 else -d * \
+        [data[0]] + data[0:t + 1]  # pad with t0
     res = []
     for i in range(n - 1):
         res.append(sigmoid(block[i + 1] - block[i]))
     return np.array([res])
 
 
-#Train RL
-#def run_rl(tick_name):
-
+# Train RL
+# def run_rl(tick_name):

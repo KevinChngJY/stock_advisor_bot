@@ -1,0 +1,79 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en-US">
+
+<head>
+<link rel="stylesheet" type="text/css" href="{% static 'style2.css' %}">
+<link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.2/css/bootstrap.min.css'>
+<link rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css'>
+<link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/bootstrap-table/1.10.0/bootstrap-table.min.css'>
+<link rel='stylesheet' href='https://rawgit.com/vitalets/x-editable/master/dist/bootstrap3-editable/css/bootstrap-editable.css'>
+</head>
+
+<body>
+<!-- partial:index.partial.html -->
+<div class="container">
+  <div class="row">
+    <div class="col-md-12">
+      <h1>Reinforcement Learning & Evolving Learning</h1>
+      <p>Author : ISA_STOCK_ADVISOR</p>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-6">
+      <h3>{{ official_name }}</h3>
+      <p>Rango corto (horas dentro de un mismo día)</p>
+      <p>Impedit eaque illo, maiores explicabo, sunt est esse quae nostrum consectetur veniam ipsam voluptate? Dicta at consectetur illum minus cum?</p>
+    </div>
+    <div class="col-md-6">
+      <div id="chartdiv"></div>
+    </div>
+  </div>
+</div>
+
+<div class="container">
+<table id="table" 
+			 data-toggle="table"
+			 data-filter-control="true" 
+			 data-click-to-select="true"
+			 data-toolbar="#toolbar">
+	<thead>
+		<tr>
+      <th data-field="date" data-sortable="true">Date</th>
+			<th data-field="price" data-sortable="true">Price</th>
+			<th data-field="rl" data-sortable="true">Reinforcement Learning</th>
+      <th data-field="profit1" data-sortable="true">Profit</th>
+			<th data-field="el" data-sortable="true">Evolving Learning</th>
+      <th data-field="profit2" data-sortable="true">Profit</th>
+		</tr>
+	</thead>
+	<tbody>
+		{% for date_data, price_data, action_rl, action_inventory in table_value %}
+		<tr>
+			<td>{{date_data}}</td>
+			<td>{{price_data}}</td>
+			<td>{{action_rl}}</td>
+			<td>{{action_inventory}}</td>
+      		<td>hold</td>
+      		<td>0</td>
+		</tr>
+		{%endfor%}
+	</tbody>
+</table>
+</div>
+
+<script src='https://www.amcharts.com/lib/3/amcharts.js'></script>
+<script src='https://www.amcharts.com/lib/3/serial.js'></script>
+<script src='https://www.amcharts.com/lib/3/themes/dark.js'></script>
+<script src='https://www.amcharts.com/lib/3/lang/es.js'></script>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
+<script src='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js'></script>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/bootstrap-table/1.10.0/bootstrap-table.js'></script>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/bootstrap-table/1.9.1/extensions/editable/bootstrap-table-editable.js'></script>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/bootstrap-table/1.9.1/extensions/export/bootstrap-table-export.js'></script>
+<script src='https://rawgit.com/hhurz/tableExport.jquery.plugin/master/tableExport.js'></script>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/bootstrap-table/1.9.1/extensions/filter-control/bootstrap-table-filter-control.js'></script>
+<script type="text/javascript" src="{% static 'option6_javascript.js' %}"></script>
+</body>
+
+</html>

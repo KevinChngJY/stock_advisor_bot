@@ -1,18 +1,24 @@
 {% load static %}
+<!DOCTYPE html>
+<html lang="en-US">
 <head>
 <link rel="stylesheet" type="text/css" href="{% static 'style.css' %}">
 </head>
+<body>
 <div class="login">
 	<h1>Compute RL/GA</h1>
     <h2>Input:</h2>
     {% if explain %}
-    <h3>{{ explain }}</h3>
+    <h5>{{ explain }}</h5>
     {% endif %}
     <form method="post">
     {% csrf_token %}
     	<input type="text" name="s" placeholder="Stock Tick Name" required="required" />
         <input type="text" name="w" placeholder="Window Size" required="required" />
         <input type="text" name="e" placeholder="Episode Count" required="required" />
-        <button type="submit" class="btn btn-primary btn-block btn-large" name="Compute">Start Compute</button>
+        <button id="submit-btn" type="submit" class="btn btn-primary btn-block btn-large" name="Compute">Start Compute</button>
     </form>
 </div>
+<script type="text/javascript" src="{% static 'index_javascript.js' %}"></script>
+</body>
+</html>
