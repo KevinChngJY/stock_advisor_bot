@@ -455,7 +455,8 @@ you might have error in installing tensorflow in anaconda, it is pretty common, 
 pip install python-dateutil
 pip install pandas-datareader
 pip install tagenalgo
-conda install -c numba numba
+pip install numba
+pip install scikit-learn
 ```
 
 
