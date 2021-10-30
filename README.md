@@ -457,6 +457,7 @@ pip install pandas-datareader
 pip install tagenalgo
 pip install numba
 pip install scikit-learn
+pip install ta
 ```
 
 
