@@ -1,4 +1,3 @@
-(Still in development)
 ---
 
 ## SECTION 1 : PROJECT TITLE
@@ -16,7 +15,7 @@ Features of Bot :
 | 3.0 Monitoring Announcement | Market Announcement Notification according to user’s stock watchlist |  
 | 4.0 Portfolio Optimization and Asset Allocation | Correlation, Risk Assessment, Portfolio Optimization and Asset Allocation, etc|
 | 5.0 Time Series Forecasting | Classical Time Series Forecasting Technique, Machine Learning and Deep Learning |  
-| 6.0 Reinforcement Learning | Trading strategies advise according to result of RL policy and traditional benchmark (RSI and etc) 
+| 6.0 Reinforcement Learning & Evolving Learning| Trading strategies advise according to result of RL policy and traditional benchmark (RSI and etc) 
 
 The TELEGRAM BOT is designed with the end-user in mind, and the dialogue/workflow is designed to be as user friendly and iniuitive as possible.<br>
 Below is the menu of the bot:<br>
@@ -24,7 +23,9 @@ Below is the menu of the bot:<br>
 <img src="https://github.com/KevinChngJY/stock_advisor_bot/blob/main/Image/bot_menu.PNG" width="455" height="350"
      style="float: left; margin-right: 0px;" />
      
-Demonstration of the system (Video) :
+Demonstration of the system (Video) - Marketing:
+
+Demonstration of the system (Video) - High Level Architecture Explaination:
 
 
 the following section 2 - 5 explains the steps how we build the system.
@@ -38,13 +39,9 @@ if you are looking to run the system, you may direct jump to seciuon 6 : Guide t
 <img src="https://github.com/KevinChngJY/stock_advisor_bot/blob/main/Image/architecture1.PNG" width="655" height="350"
      style="float: left; margin-right: 0px;" />
      
-API Gateway of system is using ngrok (Between telegram and Rasa OpenSource Server)
-     
-## DEPLOY TO SERVER (DIGITAL OCEAN) : 2 Server Machine or 3 Server Machine
-(Not in the scope of this project)
+API Gateway of system is using ngrok (Between telegram and Rasa OpenSource Server/Django)
 
-## DEPLOY TO CONTAINER
-(Not in the scope of this project)
+In this project, besides telegram chat platform, if user selects option 6 : Reinforcement Learning & Evolving Learning, it would navigate user to website. (Therefore, we need 2 ports (forwarding to external) through ngrok. In ngrok, for 2 port forwarding from local, it has to pay USD 10 monthly subscription (as per 31 Oct 2021).
 
 ---
 ## SECTION 3 : PROJECT - MILESTONES
@@ -271,7 +268,7 @@ In this milestone, there are 2 algorihtms (RL and GA) to optimize the trading st
 **What is Reinforcement Learning?**
 Reinforcement learning is another type of machine learning besides supervised and unsupervised learning. This is an agent-based learning system where the agent takes actions in an environment where the goal is to maximize the record. Reinforcement learning does not require the usage of labeled data like supervised learning.
 
-Reinforcement learning works very well with less historical data. It makes use of the value function and calculates it on the basis of the policy that is decided for that action.
+Reinforcement learning works very well with rich historical data. It makes use of the value function and calculates it on the basis of the policy that is decided for that action.
 
 **Define the Reinforcement Learning Environment**<br>
 MDP for Stock Price Prediction: 
@@ -285,7 +282,7 @@ States – Data values<br>
 Rewards – Profit / Loss<br>
 
 **Script - Reinforcement Learning**<br>
-In this milestone, we use deep Q-Learning algorithm to train the policy for trading strategy. 
+In this milestone, we use deep Q-Learning algorithm to train the policy for trading strategy.<br>
 Script for Reinforcement Learning : https://github.com/KevinChngJY/stock_advisor_bot/tree/main/Milestone2/Milestone2_6_Reinforcement_Learning_Trading_Strategy
 
 **What is Genetic Algorithm?**<br>
@@ -293,11 +290,9 @@ In computer science and operations research, a genetic algorithm (GA) is a metah
 
 In layman term, it is a type of global optimization algorihm to optimize the parameters in your complex mathematical equations/objective function
 
-**Define the Objective Function**<br>
-
-**Script - Reinforcement Learning**<br>
+**Script - Evolving Learning**<br>
 In this script, we don't include mutation in the GA algorithm.<br>
-Script for RSI Indicators :https://github.com/KevinChngJY/stock_advisor_bot/tree/main/Milestone2/Milestone2_6_Evolving_Learning-Trading_Algorithm
+Script for RSI Indicators : https://github.com/KevinChngJY/stock_advisor_bot/tree/main/Milestone2/Milestone2_6_Evolving_Learning-Trading_Algorithm
 
 ---
 ## SECTION 6 : Integration
@@ -336,10 +331,16 @@ Telegramid is required for the features 3 - 2.3 Monitoring Annoucements. Once th
 <img src="https://github.com/KevinChngJY/stock_advisor_bot/blob/main/Image/userdatabase_django.png" width="455" height="200"
      style="float: left; margin-right: 0px;" />
      
-**How do you get the telegramid?**
-     
+**How do you get the telegramid?**<br>
+https://www.wikihow.com/Know-Chat-ID-on-Telegram-on-Android#:~:text=Locate%20%22Chat.%22%20It's%20about,Last%20Name%2C%20and%20your%20Username.&text=Note%20the%20number%20next%20to,is%20your%20personal%20Chat%20ID.
+
 4) Update Rasa for Authentication process
 
+We will use RASA Actions Server to validate the userlogin with the userlist in the database. Below is the code in RASA Action Server:
+
+<img src="https://github.com/KevinChngJY/stock_advisor_bot/blob/main/Image/login_validate.png" width="355" height="600"
+     style="float: left; margin-right: 0px;" />
+     
 ### Milestone 3.3 Database Django
 
 There are 5 table in the database for this project : 
