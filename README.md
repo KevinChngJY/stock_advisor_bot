@@ -348,19 +348,19 @@ There are 5 table in the database for this project :
      style="float: left; margin-right: 0px;" />
      
 **Bursa Stock list:** <br>
-<img src="https://github.com/KevinChngJY/stock_advisor_bot/blob/main/Image/bursalist_database.png" width="455" height="100"
+<img src="https://github.com/KevinChngJY/stock_advisor_bot/blob/main/Image/bursalist_database.png" width="455" height="150"
      style="float: left; margin-right: 0px;" />
      
 **Option1_selection :** <br>
-<img src="https://github.com/KevinChngJY/stock_advisor_bot/blob/main/Image/option1_indicators_database.png" width="455" height="450"
+<img src="https://github.com/KevinChngJY/stock_advisor_bot/blob/main/Image/option1_indicators_database.png" width="455" height="500"
      style="float: left; margin-right: 0px;" />
      
 **Option3_stock_monitorings :** <br>
-<img src="https://github.com/KevinChngJY/stock_advisor_bot/blob/main/Image/option3_stock_monitoring_database.png" width="455" height="130"
+<img src="https://github.com/KevinChngJY/stock_advisor_bot/blob/main/Image/option3_stock_monitoring_database.png" width="455" height="160"
      style="float: left; margin-right: 0px;" />
      
 **sentimentanalysistop10 :** <br>
-<img src="https://github.com/KevinChngJY/stock_advisor_bot/blob/main/Image/sentiment_analysis_10_list.png" width="455" height="100"
+<img src="https://github.com/KevinChngJY/stock_advisor_bot/blob/main/Image/sentiment_analysis_10_list.png" width="455" height="150"
      style="float: left; margin-right: 0px;" />
 
 ### Milestone 3.4 WebApp for Option 2.6 Reinforcement Learning and Evolving Learning for Trading Strategies
@@ -472,35 +472,27 @@ pip install ta
 
 ### Run servers
 
-
-### Demo
-
-
-
-conda 
-
-# self-recording
-start ngrok
-
+Start Ngrok
+```
 ngrok http 5005
+```
 
-Start django server
+Start Django Server
+```
 python manage.py runserver
+```
 
-start celery
+Start Celery Scheduler
+```
 celery -A chatbot worker -B -l INFO
+```
 
-Start rasa
+Start Rasa Open Source Server
+```
 rasa run
+```
 
-start action server
+Start Rasa Action Server
+```
 rasa run actions
-
-backlog to complete
-1) Documentation milestone 2.6
-2) Documentation 3.1
-3) Documentation 3.2
-4) Documentation 3.3
-5) Documentation 3.4
-6) Login Page for django 
-7) RL/GA - one page enough...when trying then loading, once done, then display the result in table and advise should they buy or not.
+```
