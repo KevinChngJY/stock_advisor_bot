@@ -45,19 +45,21 @@
       <th data-field="date" data-sortable="true">Date</th>
 			<th data-field="price" data-sortable="true">Price</th>
 			<th data-field="rl" data-sortable="true">Reinforcement Learning</th>
-      <th data-field="profit1" data-sortable="true">Profit</th>
+            <th data-field="profit1" data-sortable="true">Profit</th>
 			<th data-field="el" data-sortable="true">Evolving Learning</th>
-      <th data-field="profit2" data-sortable="true">Profit</th>
+			<th data-field="el" data-sortable="true">RSI</th>
+            <th data-field="profit2" data-sortable="true">Profit</th>
 		</tr>
 	</thead>
 	<tbody>
-		{% for date_data, price_data, action_rl, action_inventory_rl,action_ga, action_inventory_ga in table_value %}
+		{% for date_data, price_data, action_rl, action_inventory_rl,action_ga, RSI, action_inventory_ga in table_value %}
 		<tr>
 			<td>{{date_data}}</td>
 			<td>{{price_data}}</td>
 			<td>{{action_rl}}</td>
 			<td>{{action_inventory_rl}}</td>
       		<td>{{action_ga}}</td>
+			<td>{{RSI}}</td>
       		<td>{{action_inventory_ga}}</td>
 		</tr>
 		{%endfor%}

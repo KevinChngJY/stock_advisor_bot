@@ -239,6 +239,7 @@ def option6_login(request):
         ga_advise = action_show_RL[-1]
 
         # tidy variables (Sent to frontend)
+        RSI = list(df['rsi'])
         data_stock = ["{0:.3f}".format(x)for x in data_stock]
         cummulated_show_profit = ["{0:.3f}".format(
             x)for x in cummulated_show_profit]
@@ -246,7 +247,7 @@ def option6_login(request):
             x)for x in cummulated_show_ga_profit]
         table_value = zip(date_data, data_stock,
                           action_show_RL, cummulated_show_profit,
-                          action_show_GA, cummulated_show_ga_profit)
+                          action_show_GA, RSI, cummulated_show_ga_profit)
         official_name = stock.company_official
         context = {'table_value': table_value, 'official_name': official_name, 'episode_count': episode_count, 'total_profit': "{0:.3f}".format(total_profit),
                    'number_generation': number_generation, 'best_window': best_window, 'best_lower_rsi': best_lower_rsi, 'best_upper_rsi': best_upper_rsi,
