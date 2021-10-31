@@ -27,6 +27,8 @@ from pandas_datareader import data
 import tagenalgo as tg
 from tagenalgo import TAGenAlgo
 from sklearn.model_selection import train_test_split
+from ta.momentum import RSIIndicator
+
 
 # Create your views here.
 
@@ -85,6 +87,7 @@ def option6_login(request):
         # Check for key_in for window size and episode count (Must be digit)
         window_size = request.POST.get('w')
         episode_count = request.POST.get('e')
+        number_generation = request.POST.get('ga')
         if window_size.isdigit() == False or episode_count.isdigit() == False:
             template = loader.get_template('option6.html')
             explain = "Window Size & Episode must be digit!"
@@ -105,7 +108,16 @@ def option6_login(request):
             context = {'explain': explain}
             return HttpResponse(template.render(context, request))
 
+        # Check for number GA
+        if int(number_generation) < 1 or int(number_generation) > 5:
+            template = loader.get_template('option6.html')
+            explain = "System is running in personal home laptop, so maximum generation is 5"
+            context = {'explain': explain}
+            return HttpResponse(template.render(context, request))
+
         # Train Agent for RL
+        print("Start RL Training")
+
         stock_tick = stock.company_tickname
         data_stock, date_data = getStockDataVec(stock_tick)
         window_size = int(window_size)
@@ -144,6 +156,8 @@ def option6_login(request):
                     agent.expReplay(batch_size)
 
         # # RL Evaluation
+        print("Start RL Evaluation")
+
         state = getState(data_stock, 0, window_size+1)
         total_profit = 0
         agent.inventory = []
@@ -163,13 +177,11 @@ def option6_login(request):
                 bought_price = agent.inventory.pop(0)
                 reward = max(data_stock[t] - bought_price, 0)
                 total_profit += data_stock[t] - bought_price
-                print(reward)
-                print(total_profit)
                 action_show_RL.append("Sell")
                 print(
                     "Sell: " + formatPrice(data_stock[t]) + " | Profit: " + formatPrice(data_stock[t] - bought_price))
             else:
-                action_show_RL.append("Hold")
+                action_show_RL.append("No Action")
             done = True if t == l - 1 else False
             if done:
                 print("--------------------------------")
@@ -180,23 +192,71 @@ def option6_login(request):
             cummulated_show_profit.append(total_profit)
 
         # GA Optimization
-        #X_train, X_test = train_test_split(data_stock,shuffle=False)
-        #model = TAGenAlgo(price=X_train, generations=3, population_size=100, crossover_prob=0.9, mutation_prob=0, method='single', strategy='rsi')
-        # _, init_pop = model.ta_initialize(indicator_set={'rsi': {'window': [5, 180], 'down_thres': [5, 50], 'up_thres': [51, 90]}}
+        # GA Training
+        print("Start GA Trainng")
 
+        data_stock1 = np.array(data_stock)
+        model = TAGenAlgo(price=data_stock1, generations=int(number_generation), population_size=100,
+                          crossover_prob=0.9, mutation_prob=0, method='single', strategy='rsi')
+        _, init_pop = model.ta_initialize(indicator_set={
+                                          'rsi': {'window': [5, 180], 'down_thres': [5, 50], 'up_thres': [51, 90]}})
+        model.fit(init_pop)
+        best_window, best_lower_rsi, best_upper_rsi = model.best_params
+
+        # Evaluate GA
+        print("Start GA Evaluation")
+        df = getStockDataVec_GA(stock_tick)
+        indicator_rsi = RSIIndicator(
+            close=df,  window=best_window, fillna=True)
+        df['rsi'] = indicator_rsi.rsi()
+        slicing_len = len(data_stock)
+        df = df[-slicing_len:]
+        action_show_GA = []
+        cummulated_show_ga_profit = []
+        total_profit_GA = 0
+        inventory = []
+        for count, t in enumerate(range(l)):
+            print(date_data[t])
+            inventory = []
+            if df['rsi'][count] < best_lower_rsi:  # buy
+                inventory.append(data_stock[t])
+                print("Buy: " + formatPrice(data_stock[t]))
+                action_show_GA.append("Buy")
+            # sell
+            elif df['rsi'][count] > best_upper_rsi and len(inventory) > 0:
+                bought_price = inventory.pop(0)
+                reward = max(data_stock[t] - bought_price, 0)
+                total_profit_GA += data_stock[t] - bought_price
+                action_show_RL.append("Sell")
+                print(
+                    "Sell: " + formatPrice(data_stock[t]) + " | Profit: " + formatPrice(data_stock[t] - bought_price))
+            else:
+                action_show_GA.append("No Action")
+            cummulated_show_ga_profit.append(total_profit_GA)
+
+        # Buy or Sell - Advise
+        rl_advise = action_show_GA[-1]
+        ga_advise = action_show_RL[-1]
+
+        # tidy variables (Sent to frontend)
         data_stock = ["{0:.3f}".format(x)for x in data_stock]
         cummulated_show_profit = ["{0:.3f}".format(
             x)for x in cummulated_show_profit]
+        cummulated_show_ga_profit = ["{0:.3f}".format(
+            x)for x in cummulated_show_ga_profit]
         table_value = zip(date_data, data_stock,
-                          action_show_RL, cummulated_show_profit)
+                          action_show_RL, cummulated_show_profit,
+                          action_show_GA, cummulated_show_ga_profit)
         official_name = stock.company_official
-        context = {'table_value': table_value, 'official_name': official_name}
+        context = {'table_value': table_value, 'official_name': official_name, 'episode_count': episode_count, 'total_profit': "{0:.3f}".format(total_profit),
+                   'number_generation': number_generation, 'best_window': best_window, 'best_lower_rsi': best_lower_rsi, 'best_upper_rsi': best_upper_rsi,
+                   'total_profit_GA': "{0:.3f}".format(total_profit_GA), 'rl_advise': rl_advise, 'ga_advise': ga_advise}
         template = loader.get_template('option6_compute.html')
         return HttpResponse(template.render(context, request))
 
     return HttpResponse(render(request, "index.html"))
 
-# Agent
+# Agent-RL
 
 
 class Agent:
@@ -244,7 +304,7 @@ class Agent:
         if self.epsilon > self.epsilon_min:
             self.epsilon *= self.epsilon_decay
 
-# Basic Function
+# Basic Function for RL
 
 
 def formatPrice(n):
@@ -257,7 +317,7 @@ def getStockDataVec(key):
     today = date.today()
     # YYYY-MM-DD
     d1 = today.strftime("%Y/%m/%d")
-    startdate = date.today() + relativedelta(months=-int(1))
+    startdate = date.today() + relativedelta(months=-int(3))
     test = data.DataReader(stock1, 'yahoo', start=startdate, end=d1)
     vec = list(test['Close'])
     vec = [float("{0:.3f}".format(x)) for x in vec]
@@ -279,6 +339,16 @@ def getState(data, t, n):
         res.append(sigmoid(block[i + 1] - block[i]))
     return np.array([res])
 
+# Basic Function for GA
 
-# Train RL
-# def run_rl(tick_name):
+
+def getStockDataVec_GA(key):
+    stock1 = "{}.KL".format(key)
+    # Get today date
+    today = date.today()
+    # YYYY-MM-DD
+    d1 = today.strftime("%Y/%m/%d")
+    startdate = date.today() + relativedelta(months=-int(4))
+    test = data.DataReader(stock1, 'yahoo', start=startdate, end=d1)
+    vec = test['Close']
+    return vec

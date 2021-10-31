@@ -22,8 +22,11 @@
   <div class="row">
     <div class="col-md-6">
       <h3>{{ official_name }}</h3>
-      <p>Rango corto (horas dentro de un mismo día)</p>
-      <p>Impedit eaque illo, maiores explicabo, sunt est esse quae nostrum consectetur veniam ipsam voluptate? Dicta at consectetur illum minus cum?</p>
+      <p>For Reinforcement Learning, it has completed {{episode_count}} episodes for training. The RL algo achieves profit {{total_profit}} . </p>
+	  <p>For Evolving Learning, it has completed {{number_generation}} generations for training. Genetic algorithm summarize the best RSI strategy as follows : Window Period is {{best_window}}, Lower RSI Threshold(Oversold) is {{best_lower_rsi}}, Upper RSI Threshold(Overbough) is {{best_upper_rsi}}. </p>
+	  <p>The GA algo achieves profit {{total_profit_GA}} </p>
+	  <p>You may view the table below to understand the training outcome of RL and EL-historical data.</p>
+	  <p>In the next trading day, RL advise "{{rl_advise}}" and EL(GA) advise to "{{ga_advise}}"</p>
     </div>
     <div class="col-md-6">
       <div id="chartdiv"></div>
@@ -48,14 +51,14 @@
 		</tr>
 	</thead>
 	<tbody>
-		{% for date_data, price_data, action_rl, action_inventory in table_value %}
+		{% for date_data, price_data, action_rl, action_inventory_rl,action_ga, action_inventory_ga in table_value %}
 		<tr>
 			<td>{{date_data}}</td>
 			<td>{{price_data}}</td>
 			<td>{{action_rl}}</td>
-			<td>{{action_inventory}}</td>
-      		<td>hold</td>
-      		<td>0</td>
+			<td>{{action_inventory_rl}}</td>
+      		<td>{{action_ga}}</td>
+      		<td>{{action_inventory_ga}}</td>
 		</tr>
 		{%endfor%}
 	</tbody>

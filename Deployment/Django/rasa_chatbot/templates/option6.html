@@ -14,8 +14,9 @@
     <form method="post">
     {% csrf_token %}
     	<input type="text" name="s" placeholder="Stock Tick Name" required="required" />
-        <input type="text" name="w" placeholder="Window Size" required="required" />
-        <input type="text" name="e" placeholder="Episode Count" required="required" />
+        <input type="text" name="w" placeholder="Window Size-RL" required="required" />
+        <input type="text" name="e" placeholder="Episode Count-RL" required="required" />
+        <input type="text" name="ga" placeholder="Number of Generation-GA" required="required" />
         <button id="submit-btn" type="submit" class="btn btn-primary btn-block btn-large" name="Compute">Start Compute</button>
     </form>
 </div>
