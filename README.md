@@ -336,7 +336,7 @@ https://www.wikihow.com/Know-Chat-ID-on-Telegram-on-Android#:~:text=Locate%20%22
 
 We will use RASA Actions Server to validate the userlogin with the userlist in the database. Below is the code in RASA Action Server:
 
-<img src="https://github.com/KevinChngJY/stock_advisor_bot/blob/main/Image/login_validate.png" width="355" height="600"
+<img src="https://github.com/KevinChngJY/stock_advisor_bot/blob/main/Image/login_validate.png" width="455" height="600"
      style="float: left; margin-right: 0px;" />
      
 ### Milestone 3.3 Database Django
@@ -344,14 +344,24 @@ We will use RASA Actions Server to validate the userlogin with the userlist in t
 There are 5 table in the database for this project : 
 
 **User list :** <br>
-
+<img src="https://github.com/KevinChngJY/stock_advisor_bot/blob/main/Image/userlist_database.png" width="455" height="300"
+     style="float: left; margin-right: 0px;" />
+     
+**Bursa Stock list:** <br>
+<img src="https://github.com/KevinChngJY/stock_advisor_bot/blob/main/Image/bursalist_database.png" width="455" height="200"
+     style="float: left; margin-right: 0px;" />
+     
 **Option1_selection :** <br>
-
-**Option3_stock_monitorings :** <br> 
-
+<img src="https://github.com/KevinChngJY/stock_advisor_bot/blob/main/Image/option1_indicators_database.png" width="455" height="600"
+     style="float: left; margin-right: 0px;" />
+     
+**Option3_stock_monitorings :** <br>
+<img src="https://github.com/KevinChngJY/stock_advisor_bot/blob/main/Image/option3_stock_monitoring_database.png" width="455" height="230"
+     style="float: left; margin-right: 0px;" />
+     
 **sentimentanalysistop10 :** <br>
-
-bursalist : 
+<img src="https://github.com/KevinChngJY/stock_advisor_bot/blob/main/Image/sentiment_analysis_10_list.png" width="455" height="200"
+     style="float: left; margin-right: 0px;" />
 
 ### Milestone 3.4 WebApp for Option 2.6 Reinforcement Learning and Evolving Learning for Trading Strategies
 
