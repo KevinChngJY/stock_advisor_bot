@@ -1,5 +1,4 @@
 ---
-
 ## SECTION 1 : PROJECT TITLE
 ## Finance Bot
 
