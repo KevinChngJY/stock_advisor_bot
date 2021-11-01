@@ -27,7 +27,7 @@ Demonstration of the system (Video) - High Level Architecture Explaination:
 
 
 the following section 2 - 5 explains the steps how we build the system.
-if you are looking to run the system, you may direct jump to seciuon 6 : Guide to run the system locally.
+if you are looking to run the system, you may direct jump to section 7 : Guide to run the system locally.
 
 ---
 
