@@ -3,7 +3,7 @@ AmCharts.makeChart("chartdiv",
 			"type": "serial",
 			"categoryField": "date",
 			"columnWidth": 0,
-			"dataDateFormat": "YYYY-MM-DD HH",
+			"dataDateFormat": "YY-MM-DD",
 			"maxSelectedSeries": 0,
 			"zoomOutText": "Ver todo",
       "language": "es",
@@ -55,11 +55,11 @@ AmCharts.makeChart("chartdiv",
 					"balloonText": "Precio [[value]]",
 					"bullet": "round",
 					"id": "AmGraph-1",
-					"title": "GRUPOSURA",
+					"title": "stock",
 					"type": "smoothedLine",
-					"valueField": "GRUPOSURA"
-				},
-				{
+					"valueField": "stock"
+				}
+				/*{
 					"balloonText": "Precio [[value]]",
 					"bullet": "round",
 					"id": "AmGraph-2",
@@ -74,7 +74,7 @@ AmCharts.makeChart("chartdiv",
 					"title": "LOREM",
 					"type": "smoothedLine",
 					"valueField": "LOREM"
-				}
+				}*/
 			],
 			"guides": [],
 			"valueAxes": [
@@ -102,50 +102,13 @@ AmCharts.makeChart("chartdiv",
 				"valueAlign": "left"
 			},
 			"titles": [],
-			"dataProvider": [
-				{
-					"date": "2018-08-19 15:00",
-					"GRUPOSURA": 36308,
-					"PFGRUPOSURA": 35419,
-					"LOREM": 36521
-				},
-				{
-					"date": "2018-08-19 16:00",
-					"GRUPOSURA": 36196,
-					"PFGRUPOSURA": 35132,
-					"LOREM": 36623
-				},
-				{
-					"date": "2018-08-19 17:00",
-					"GRUPOSURA": 36907,
-					"PFGRUPOSURA": 35293,
-					"LOREM": 36237
-				},
-				{
-					"date": "2018-08-19 18:00",
-					"GRUPOSURA": 36312,
-					"PFGRUPOSURA": 35296,
-					"LOREM": 36144
-				},
-				{
-					"date": "2018-08-19 19:00",
-					"GRUPOSURA": 36399,
-					"PFGRUPOSURA": 35398,
-					"LOREM": 36275
-				},
-				{
-					"date": "2018-08-19 20:00",
-					"GRUPOSURA": 36473,
-					"PFGRUPOSURA": 35368,
-					"LOREM": 36595
-				},
-				{
-					"date": "2018-08-19 21:00",
-					"GRUPOSURA": 36182,
-					"PFGRUPOSURA": 35257,
-					"LOREM": 36423
-				}
-			]
+			"dataProvider": getData(),
+			//[
+			//	{
+			//		"date": "2018-08-19 15:00",
+			//		"GRUPOSURA": 36308
+			//	}
+			//]
 		}
 	);
 
@@ -163,3 +126,20 @@ var $table = $('#table');
 	$(trBoldBlue).on("click", "tr", function (){
 			$(this).toggleClass("bold-blue");
 	});
+
+function getData(){
+	var table = document.getElementById('table');
+	var chartData = [];
+	for (var r = 1, n = table.rows.length; r < n; r++) {
+			//for (var c = 0, m = table.rows[r].cells.length; c < m; c++) {
+				//document.write(table.rows[r].cells[c].innerHTML);
+				date=table.rows[r].cells[0].innerHTML;
+				stock=table.rows[r].cells[1].innerHTML;
+				chartData.push({date:date,stock:parseFloat(stock)});
+			//}
+	};
+
+	return chartData
+}
+	
+//AmCharts.dataProvider=chartData;

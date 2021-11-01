@@ -70,7 +70,7 @@ slots:
 responses:
   utter_start:
     - text: "This is Stock Advisor Bot.\n
-            Please select one of the following options"
+        Please select one of the following options"
       button_type: "vertical"
       buttons:
         - title: "1 Stock Information\n"
@@ -88,8 +88,8 @@ responses:
 
   utter_ask_stocktick:
     - text: "What stock do you want to know?\n
-            [Kindly Key in the ticket/stock name]\n
-            Eg. Seven Eleven/7-ELEVEN MALAYSIA HOLDINGS BERHAD"
+        [Kindly Key in the ticket/stock name]\n
+        Eg. Seven Eleven/7-ELEVEN MALAYSIA HOLDINGS BERHAD"
 
   utter_ask_username:
     - text: "What is your username?"
@@ -152,18 +152,19 @@ responses:
 
   utter_ask_correlationmonth:
     - text: "How many month do you want to compare?\n[
-             minimun 1 month, maximum 12 months]\n[Only key in numeric number]"
+        minimun 1 month, maximum 12 months]\n[Only key in numeric number]"
 
   utter_ask_vstock:
     - text: "What is the stock do you want calculate for price volatility?"
 
   utter_ask_vmonth:
     - text: "How many month do you want to get the Price Volatility?\n
-            [minimun 1 month, maximum 12 months]\n[Only key in numeric number]"
+        [minimun 1 month, maximum 12 months]\n[Only key in numeric number]"
 
   utter_ask_stocklist:
-    - text: "What are the stocks that ypu intends to perform portfolio optimization?\n
-             Please type as following format : eg : adventa,711,asb"
+    - text:
+        "What are the stocks that ypu intends to perform portfolio optimization?\n
+        Please type as following format : eg : adventa,711,asb"
 
   utter_ask_portfolio_time:
     - text: "How many months do you want to compute the Optimal Portfolio Optimization?"
@@ -178,17 +179,21 @@ responses:
           payload: "/start"
 
   utter_ask_stockoption5:
-    - text : "What stock do you want to forecast?"
+    - text: "What stock do you want to forecast?"
 
   utter_ask_arima_parameters:
-    - text : "Kindly define the following parameters ARIMA(p,D,q):\nP : autoregressive term\nD : number of non-seasonal differences\nq : moving average term\nKindly key in as the following format :eg ARIMA(1,1,0)"
+    - text: "Kindly define the following parameters ARIMA(p,D,q):\nP : autoregressive term\nD : number of non-seasonal differences\nq : moving average term\nKindly key in as the following format :eg ARIMA(1,1,0)"
 
   utter_option6:
     - text: "Option 6 : RL & GA for Trading Strategies\n
-             \n
-             RL & GA Algorithms requires high computing resources, when the algorithm is running, it might requires 20 minutes or more for the waiting time.\n
-             Kindly open the following url if you intend to run RL & GA for trading strategies\n
-             [www.google.com](https://www.google.com)"
+        \n
+        RL & GA Algorithms requires high computing resources, when the algorithm is running, it might requires 20 minutes or more for the waiting time.\n
+        Kindly open the following url if you intend to run RL & GA for trading strategies\n
+        http://127.0.0.1:8000/option6_login/)"
+      buttons:
+        - title: "Back to Menu"
+          payload: "/start"
+
 forms:
   stockpick_form:
     required_slots:

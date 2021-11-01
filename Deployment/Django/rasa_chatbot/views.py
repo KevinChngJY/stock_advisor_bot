@@ -210,7 +210,7 @@ def option6_login(request):
             close=df,  window=best_window, fillna=True)
         df['rsi'] = indicator_rsi.rsi()
         slicing_len = len(data_stock)
-        df = df[-slicing_len:]
+        df = df[-slicing_len:].copy()
         action_show_GA = []
         cummulated_show_ga_profit = []
         total_profit_GA = 0
@@ -218,16 +218,17 @@ def option6_login(request):
         for count, t in enumerate(range(l)):
             print(date_data[t])
             inventory = []
-            if df['rsi'][count] < best_lower_rsi:  # buy
+            print(df['rsi'][-l+count])
+            if df['rsi'][-l-1+count] < best_lower_rsi:  # buy
                 inventory.append(data_stock[t])
                 print("Buy: " + formatPrice(data_stock[t]))
                 action_show_GA.append("Buy")
             # sell
-            elif df['rsi'][count] > best_upper_rsi and len(inventory) > 0:
+            elif df['rsi'][-l-1+count] > best_upper_rsi and len(inventory) > 0:
                 bought_price = inventory.pop(0)
                 reward = max(data_stock[t] - bought_price, 0)
                 total_profit_GA += data_stock[t] - bought_price
-                action_show_RL.append("Sell")
+                action_show_GA.append("Sell")
                 print(
                     "Sell: " + formatPrice(data_stock[t]) + " | Profit: " + formatPrice(data_stock[t] - bought_price))
             else:
@@ -239,15 +240,17 @@ def option6_login(request):
         ga_advise = action_show_RL[-1]
 
         # tidy variables (Sent to frontend)
-        RSI = list(df['rsi'])
+        RSI = list(df['rsi'].copy()[-slicing_len:])
         data_stock = ["{0:.3f}".format(x)for x in data_stock]
         cummulated_show_profit = ["{0:.3f}".format(
             x)for x in cummulated_show_profit]
         cummulated_show_ga_profit = ["{0:.3f}".format(
             x)for x in cummulated_show_ga_profit]
-        table_value = zip(date_data, data_stock,
+        RSI = ["{0:.2f}".format(x)for x in RSI]
+
+        table_value = zip(date_data[:-1], data_stock[:-1],
                           action_show_RL, cummulated_show_profit,
-                          action_show_GA, RSI, cummulated_show_ga_profit)
+                          action_show_GA, RSI[:-1], cummulated_show_ga_profit)
         official_name = stock.company_official
         context = {'table_value': table_value, 'official_name': official_name, 'episode_count': episode_count, 'total_profit': "{0:.3f}".format(total_profit),
                    'number_generation': number_generation, 'best_window': best_window, 'best_lower_rsi': best_lower_rsi, 'best_upper_rsi': best_upper_rsi,
@@ -318,7 +321,7 @@ def getStockDataVec(key):
     today = date.today()
     # YYYY-MM-DD
     d1 = today.strftime("%Y/%m/%d")
-    startdate = date.today() + relativedelta(months=-int(3))
+    startdate = date.today() + relativedelta(months=-int(1))
     test = data.DataReader(stock1, 'yahoo', start=startdate, end=d1)
     vec = list(test['Close'])
     vec = [float("{0:.3f}".format(x)) for x in vec]
@@ -349,7 +352,7 @@ def getStockDataVec_GA(key):
     today = date.today()
     # YYYY-MM-DD
     d1 = today.strftime("%Y/%m/%d")
-    startdate = date.today() + relativedelta(months=-int(4))
+    startdate = date.today() + relativedelta(months=-int(2))
     test = data.DataReader(stock1, 'yahoo', start=startdate, end=d1)
     vec = test['Close']
     return vec
