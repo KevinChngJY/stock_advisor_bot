@@ -23,7 +23,7 @@ Below is the menu of the bot:<br>
      
 Demonstration of the system (Video) - Marketing:
 
-[![IMAGE ALT TEXT HERE](https://img.youtube.com/vi/YOUTUBE_VIDEO_ID_HERE/0.jpg)](https://youtu.be/Q_i9Wq6B1Lc)
+[![IMAGE ALT TEXT HERE](https://github.com/KevinChngJY/stock_advisor_bot/blob/main/Image/marketing.PNG)](https://youtu.be/Q_i9Wq6B1Lc)
 
 Demonstration of the system (Video) - High Level Architecture Explaination:
 
