@@ -23,8 +23,7 @@ Below is the menu of the bot:<br>
      
 Demonstration of the system (Video) - Marketing:
 
-<img src="https://youtu.be/Q_i9Wq6B1Lc" width="455" height="350"
-     style="float: left; margin-right: 0px;" />
+[![IMAGE ALT TEXT HERE](https://img.youtube.com/vi/YOUTUBE_VIDEO_ID_HERE/0.jpg)](https://youtu.be/Q_i9Wq6B1Lc)
 
 Demonstration of the system (Video) - High Level Architecture Explaination:
 
