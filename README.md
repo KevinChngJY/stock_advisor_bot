@@ -69,9 +69,9 @@ https://ngrok.com/pricing
 | 3.4 RASA + Django + Celery + Database | 9-10 | |
 | 4.0 Deployment |  |  |
 | 4.1 Deploy in Local Host | 10 |  |
-| 4.2 Deploy to Server (Digital Ocean) | 11 |  |
-| 4.3 Deploy to Container | 12 |  |
-| 5.0 User-Interface & Report | 12 |  |
+| 4.2 Deploy to Server (Digital Ocean) | Not in this project |  |
+| 4.3 Deploy to Container | Not in this project |  |
+| 5.0 User-Interface & Report | 11-12 |  |
 
 The project take estimated 12 weeks (3months) to complete, it does not include bug-fixing and UAT process.
 
