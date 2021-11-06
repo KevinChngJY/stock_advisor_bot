@@ -189,7 +189,7 @@ responses:
         \n
         RL & GA Algorithms requires high computing resources, when the algorithm is running, it might requires 20 minutes or more for the waiting time.\n
         Kindly open the following url if you intend to run RL & GA for trading strategies\n
-        http://127.0.0.1:8000/option6_login/)"
+        https://isafinancebot1.ap.ngrok.io/option6_login/)"
       buttons:
         - title: "Back to Menu"
           payload: "/start"
