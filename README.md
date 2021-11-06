@@ -43,7 +43,8 @@ if you are looking to run the system, you may direct jump to section 7 : Guide t
      
 API Gateway of system is using ngrok (Between telegram and Rasa OpenSource Server/Django)
 
-In this project, besides telegram chat platform, if user selects option 6 : Reinforcement Learning & Evolving Learning, it would navigate user to website. (Therefore, we need 2 ports (forwarding to external) through ngrok. In ngrok, for 2 port forwarding from local, it has to pay USD 10 monthly subscription (as per 31 Oct 2021).
+In this project, besides telegram chat platform, if user selects option 6 : Reinforcement Learning & Evolving Learning, it would navigate user to website. (Therefore, we need 2 ports (forwarding to external) through ngrok. In ngrok, for 2 port forwarding from local (2 ngrok process), it has to pay USD 10 for monthly subscription (as per 31 Oct 2021). You may refer to the link below for ngrok pricing : <br>
+https://ngrok.com/pricing
 
 ---
 ## SECTION 3 : PROJECT - MILESTONES
@@ -476,13 +477,23 @@ pip install ta
 
 ### Run servers
 
-Start Ngrok
+Start Ngrok - port-forward rasa server from local machine
 ```
 ngrok http 5005
 ```
 
+Start Ngrok - port-forward django server from local machine<br>
+(Take note : In ngrok documentation, it state that the free version allows to fire up multiple tunnel, however, when i try to do it, it restricts me to fire up more than 1 tunnel. Therefore, I have subscribe the "PRO" version - USD 10 monthly (as per 31 OCT 2021))<br>
+If you don't intend to subscribe the ngrok "pro" version, kindly take note that the django server is only accessible from external network, you only can test it locally.
+```
+ngrok http 8000
+```
+
+In the downloaded github repo, navigate to deployment>django, then run the following command 
+
 Start Django Server
 ```
+conda activate django_server
 python manage.py runserver
 ```
 
@@ -491,12 +502,16 @@ Start Celery Scheduler
 celery -A chatbot worker -B -l INFO
 ```
 
-Start Rasa Open Source Server
+In the downloaded github repo, navigate to deployment>rasa, then run the following command
+
+Start Rasa Open Source Server (if fail to run the rasa server, kindly run "rasa train" before running "rasa run".
 ```
+conda activate rasa_server
 rasa run
 ```
 
 Start Rasa Action Server
 ```
+conda activate rasa_server_action
 rasa run actions
 ```
