@@ -25,7 +25,7 @@ Demonstration of the system (Video) - Marketing:
 
 Demonstration of the system (Video) - High Level System Architecture Explaination:
 
-[![IMAGE ALT TEXT HERE](https://github.com/KevinChngJY/stock_advisor_bot/blob/main/Image/marketing.png)](https://www.youtube.com/watch?v=g128Voj9y48)
+[![IMAGE ALT TEXT HERE](https://github.com/KevinChngJY/stock_advisor_bot/blob/main/Image/introduce_technical.PNG)](https://www.youtube.com/watch?v=g128Voj9y48)
 
 Demo (Video) :
 
