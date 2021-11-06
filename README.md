@@ -18,17 +18,18 @@ Features of Bot :
 | 6.0 Reinforcement Learning & Evolving Learning| Trading strategies advise according to result of RL policy and traditional benchmark (RSI and etc) 
 
 The TELEGRAM BOT is designed with the end-user in mind, and the dialogue/workflow is designed to be as user friendly and iniuitive as possible.<br>
-Below is the menu of the bot:<br>
 
-<img src="https://github.com/KevinChngJY/stock_advisor_bot/blob/main/Image/bot_menu.PNG" width="455" height="350"
-     style="float: left; margin-right: 0px;" />
-     
 Demonstration of the system (Video) - Marketing:
 
 [![IMAGE ALT TEXT HERE](https://github.com/KevinChngJY/stock_advisor_bot/blob/main/Image/marketing.png)](https://youtu.be/Q_i9Wq6B1Lc)
 
-Demonstration of the system (Video) - High Level Architecture Explaination:
+Demonstration of the system (Video) - High Level System Architecture Explaination:
 
+[![IMAGE ALT TEXT HERE](https://github.com/KevinChngJY/stock_advisor_bot/blob/main/Image/marketing.png)](https://www.youtube.com/watch?v=g128Voj9y48)
+
+Demo (Video) :
+
+[![IMAGE ALT TEXT HERE](https://github.com/KevinChngJY/stock_advisor_bot/blob/main/Image/bot_menu.PNG)](https://www.youtube.com/watch?v=RNOMhzZDOBM)
 
 the following section 2 - 6 explains the steps how we build the system.
 if you are looking to run the system, you may direct jump to section 7 : Guide to run the system locally.
