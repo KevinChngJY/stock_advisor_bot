@@ -1,6 +1,8 @@
 ## SECTION 1 : PROJECT TITLE
 ## Finance Bot
 
+Team Member : He YuDao, Koh Hong Wei, Kevin Chng
+
 The project envisions to develop a TELEGRAM STOCK ADVISOR BOT to (a) empower people with useful stock information and (2) bring convenience and time savings to people.
 
 The BOT will be equipped with the following functions and features :
